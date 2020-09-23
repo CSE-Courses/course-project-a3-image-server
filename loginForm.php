@@ -31,7 +31,6 @@
 
         .signin:hover{
             opacity: 1;
-
         }
 
         input[type=text], input[type=password]{
