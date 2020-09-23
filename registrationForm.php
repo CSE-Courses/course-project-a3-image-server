@@ -25,8 +25,8 @@
             padding: 10px;
             margin: 5px 0 22px 0;
             display: table;
-            border: none;
             background: #f1f1f1;
+            alignment: center;
         }
 
         input[type=text]:focus, input[type=password]:focus{
@@ -39,7 +39,6 @@
             color: white;
             padding: 16px 20px;
             margin: 16px 0;
-            border: green;
             cursor: pointer;
             width: 10%;
             opacity: 0.8;
@@ -48,6 +47,8 @@
         hr {
             height: 1px;
             color: #dddddd;
+            width: 30%;
+            margin-left: 5px;
         }
 
         .registerbtn:hover{
@@ -66,7 +67,7 @@
     </style>
 </head>
 <body>
-    <form action="action.php">
+    <form action="register.php" method="post">
         <div class="container">
             <h1>Register</h1>
             <p>Please complete this form to create an account.</p>
@@ -76,9 +77,9 @@
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
             <label for="psw-repeat"><b>Repeat Password</b></label>
-            <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-            <button type="submit" class="registerbtn">Register</button>
+            <input type="password" placeholder="Enter your password again" name="psw-repeat" id="psw-repeat" required>
             <hr>
+            <button type="submit" class="registerbtn">Register</button>
             </div>
             <div class="container signin">
                 <p>Already have an account? <a href="#">Sign in</a>.</p>
