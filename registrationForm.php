@@ -35,7 +35,7 @@
         }
 
         .registerbtn{
-            background-color: green;
+            background-color: cornflowerblue;
             color: white;
             padding: 16px 20px;
             margin: 16px 0;
