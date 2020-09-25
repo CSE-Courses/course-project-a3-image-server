@@ -4,13 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    <!-- local bootstrap css-->
     <link rel="stylesheet" href="bootstrap.min.css">
+    
+    <!-- This will get moved to a stylesheet when the javascript is added -->
     <style>
+    
+        /* The body styling should be done by customizing the bootstrap css, but this is fine for now */
         body {
-            background-color: #ccc;
+            background-color: #D8D8D8;
             font-size:1.2rem;
         }
+        
+        /* Can't make this shape without custom css */
+        /* Change to a class when the javascript is added */
         #corners {
               border-bottom-right-radius: 70rem;
               border-bottom-left-radius: 70rem;
@@ -19,25 +26,38 @@
 
     <title>Home - Image Server</title>
   </head>
+  
+  <!-- The classes help format the sticky footer -->
   <body class="d-flex flex-column h-100">
-    <nav id="corners" class="navbar" style="background-color: #999; color:#fff">
-      <span class="nav-item dropdown pl-5">
-        <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="about:blank">About Us</a>
-          <a class="dropdown-item" href="about:blank">Home</a>
-        </div>
-      </span>
+    
+    <!-- The navbar -->
+    <nav id="corners" class="navbar" style="background-color: #918D85; color:#fff">
+    
+        <!-- The dropdown menu, just a placeholder for now, pl-5 is there to give the corner space -->
+        <span class="nav-item dropdown pl-5">
+            <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="about:blank">About Us</a>
+            <a class="dropdown-item" href="about:blank">Home</a>
+            </div>
+        </span>
+        
+        <!-- The title, with text-reset to make the links inherit their color, and pr-5 to give the corner space -->
         <a href="about:blank" class="navbar-brand text-reset m-0 h1 pr-5 py-0" style="font-size: 2rem">UB Image Server</a>
     </nav>
     
+    <!-- The classes help format the sticky footer -->
     <main role="main" class="flex-shrink-0">
         <div id="content" class="container">
+        
+            <!-- Most of the body is here. It's just a row with an 8/12 column -->
             <div class="row justify-content-center w-100 my-5">
                 <div class="col-8">
-                    <div class="card text-center w-100 border-0 rounded-0" style="background-color: #999;">
+                    
+                    <!-- Need to make this section taller -->
+                    <div class="card text-center w-100 border-0 rounded-0" style="background-color: #9A9A9A;">
                         <div class="card-body">
                             <p class="card-text">Drag file here</p>
                             <p class="card-text">-OR-</p>
@@ -49,31 +69,38 @@
         </div>
     </main>
     
+    <!-- The footer -->
     <footer class="footer mt-auto py-3">
         <div class="container">
-        <div class="card border-0 m-2">
-            <div class="card-body p-2">
-                <div class="row">
-                    <div class="col-9">
-                        <div class="card-text h-100 d-inline-flex align-items-center">Created by Joyce Sommer, Martin Donovan, Mohit Gokul Murali, Nick Anzalone, and Sean Jones for Fall 2020 CSE 442 at SUNY University at Buffalo</div>
-                    </div>
-                    <div class="col-3 text-right">
-                        <div>
-                            <a href="about:blank" class="text-reset">Log In</a>
+            
+            <!-- The footer rectangle -->
+            <div class="card border-0 m-2">
+                <div class="card-body p-2">
+                    
+                    <!-- The rows and columns of the footer -->
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="card-text h-100 d-inline-flex align-items-center">Created by Joyce Sommer, Martin Donovan, Mohit Gokul Murali, Nick Anzalone, and Sean Jones for Fall 2020 CSE 442 at SUNY University at Buffalo</div>
                         </div>
-                        <div>
-                            <a href="about:blank" class="text-reset">Sign Up</a>
-                        </div>
-                        <div>
-                            <a href="about:blank" class="text-reset">About Us</a>
-                        </div>
-                        <div>
-                            <a href="about:blank" class="text-reset">Home</a>
+                        
+                        <!-- text-reset makes the links inherit their color -->
+                        <div class="col-3 text-right">
+                            <div>
+                                <a href="about:blank" class="text-reset">Log In</a>
+                            </div>
+                            <div>
+                                <a href="about:blank" class="text-reset">Sign Up</a>
+                            </div>
+                            <div>
+                                <a href="about:blank" class="text-reset">About Us</a>
+                            </div>
+                            <div>
+                                <a href="about:blank" class="text-reset">Home</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </footer>
 
