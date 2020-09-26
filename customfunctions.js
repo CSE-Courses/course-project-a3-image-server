@@ -1,19 +1,45 @@
-// Adjust the navbar shape when the hamburger menu starts to open or finishes closing
+// Upload button setup
+function cusButSetup() {
+    const realFile = document.getElementById("real-file");
+    const realButton = document.getElementById("cus-but");
+    const realSpan = document.getElementById("but-text");
+    
+    realButton.addEventListener("click", function() {
+        realFile.click();
+    });
+    
+    realFile.addEventListener("change", function() {
+        if (realFile.value) {
+            realSpan.innerHTML = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
+        } else {
+            realSpan.innerHTML = "No file uploaded";
+            ImgServerView.clearImageDescription();
+        }
+    });
+}
 
-$('#collapseMenu').on('hidden.bs.collapse', function () {
-    document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom";
-})
 
-$('#collapseMenu').on('show.bs.collapse', function () {
-    document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom-right";
-})
+
+var ImgServerController = {
+    
+    // Adjust the navbar shape when the hamburger menu starts to open or finishes closing
+    setupMenuEvents() {
+        $('#collapseMenu').on('hidden.bs.collapse', function () {
+            document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom";
+        })
+        
+        $('#collapseMenu').on('show.bs.collapse', function () {
+            document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom-right";
+        })
+    }
+
+}
+
 
 var ImgServerView = {
-    
-    clearImageDescription() {
-        this.clearElement("imageDescription");
-    },
-    
+   
+    // Create a form to view and edit the description
     displayImageDescription(weatherDescription, geolocationDescription) {
         this.clearImageDescription();
     
@@ -34,6 +60,10 @@ var ImgServerView = {
         let buttonGroup = this.insertFormGroup(descriptionForm);
         
         this.insertButton(buttonGroup, "Confirm");
+    },
+    
+    clearImageDescription() {
+        this.clearElement("imageDescription");
     },
     
     clearElement(elementId) {
