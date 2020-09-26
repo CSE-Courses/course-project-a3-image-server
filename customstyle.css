@@ -1,0 +1,45 @@
+/* The body styling should be done by customizing the bootstrap css, but this is fine for now */
+body {
+    background-color: #D8D8D8;
+    font-size:1.2rem;
+}
+
+/* Can't make these shapes without custom css */
+.rounded-pill-bottom {
+    border-bottom-right-radius: 70rem;
+    border-bottom-left-radius: 70rem;
+    transition: border-bottom-left-radius .067s;
+    transition-timing-function: ease-out;
+}
+.rounded-pill-bottom-right {
+    border-bottom-right-radius: 70rem;
+}
+
+/* Hamburger menu styling, a modified bootstrap card */
+.menu-card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #918D85;
+    color:#fff;
+    background-clip: border-box;
+    border-bottom-right-radius: .25rem;
+    text-align: center;
+}
+
+/* custom stuff for button appearance */
+#cus-but {
+        padding: 5px;
+        color: white;
+        background-color: gray;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+#but-text {
+        margin-left: 10px;
+        color: black;
+    }

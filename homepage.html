@@ -1,153 +1,157 @@
 <!doctype html>
 <html class="h-100" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- local bootstrap css-->
-    <link rel="stylesheet" href="bootstrap.min.css">
-    
-    <!-- This will get moved to a stylesheet when the javascript is added -->
-    <style>
-    
-        /* The body styling should be done by customizing the bootstrap css, but this is fine for now */
-        body {
-            background-color: #D8D8D8;
-            font-size:1.2rem;
-        }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        /* Can't make this shape without custom css */
-        /* Change to a class when the javascript is added */
-        #corners {
-              border-bottom-right-radius: 70rem;
-              border-bottom-left-radius: 70rem;
-        }
-        /* custom stuff for button appearance */
-        #cus-but {
-				padding: 5px;
-				color: white;
-				background-color: gray;
-				border-radius: 5px;
-				cursor: pointer;
-			}
-		#but-text {
-				margin-left: 10px;
-				color: black;
-			}
-    </style>
-
-    <title>Home - Image Server</title>
-  </head>
-  
-  <!-- The classes help format the sticky footer -->
-  <body class="d-flex flex-column h-100">
-    
-    <!-- The navbar -->
-    <nav id="corners" class="navbar" style="background-color: #918D85; color:#fff">
-    
-        <!-- The dropdown menu, just a placeholder for now, pl-5 is there to give the corner space -->
-        <span class="nav-item dropdown pl-5">
-            <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menu
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="about:blank">About Us</a>
-            <a class="dropdown-item" href="about:blank">Home</a>
-            </div>
-        </span>
+        <!-- local bootstrap css-->
+        <link rel="stylesheet" href="bootstrap.min.css">
         
-        <!-- The title, with text-reset to make the links inherit their color, and pr-5 to give the corner space -->
-        <a href="about:blank" class="navbar-brand text-reset m-0 h1 pr-5 py-0" style="font-size: 2rem">UB Image Server</a>
-    </nav>
+        <!-- custom stylesheet -->
+        <link rel="stylesheet" href="customstyle.css">
+        
+        <title>Home - Image Server</title>
+    </head>
     
     <!-- The classes help format the sticky footer -->
-    <main role="main" class="flex-shrink-0">
-        <div id="content" class="container">
-        
-            <!-- Most of the body is here. It's just a row with an 8/12 column -->
-            <div class="row justify-content-center w-100 my-5">
-                <div class="col-8">
-                    
-                    <!-- Need to make this section taller -->
-                    <div class="card text-center w-100 border-0 rounded-0" style="background-color: #9A9A9A;">
-                        <div class="card-body">
-                            <p class="card-text">Drag file here</p>
-                            <p class="card-text">-OR-</p>
-                            <p>
-                                <input type="file" id="real-file" hidden="hidden"/>
-                                <button type="button" id="cus-but"> Upload a file </button>
-                                <span id="but-text"> No file uploaded </span>
-                                
-                                <script>
-                                    const realFile = document.getElementById("real-file");
-                                    const realButton = document.getElementById("cus-but");
-                                    const realSpan = document.getElementById("but-text");
-                                    
-                                    realButton.addEventListener("click", function() {
-                                        realFile.click();
-                                    });
-                                    
-                                    realFile.addEventListener("change", function() {
-                                        if (realFile.value) {
-                                            realSpan.innerHTML = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-                                        } else {
-                                            realSpan.innerHTML = "No file uploaded";
-                                        }
-                                    });
-                                </script>
-                            </p>
-                            <p>
-                                <label for="url" id="url-text"> Enter link to image: </label>
-                                <input type="url" id="web-file" placeholder="https://example.com"
-                                    size="23" required />
-                                <button type="button" id="cus-but"> File upload </button>
-                            </p> 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <body class="d-flex flex-column h-100">
     
-    <!-- The footer -->
-    <footer class="footer mt-auto py-3">
-        <div class="container">
+        <script src="customsetup.js"> </script>
+    
+        <!-- The navbar -->
+        <nav id="cseNavbar" class="navbar rounded-pill-bottom" style="background-color: #918D85; color:#fff">
+        
+            <!-- The dropdown menu, just a placeholder for now, pl-5 is there to give the corner space -->
+            <span class="nav-item pl-5">
+                <a class="nav-link text-reset" href="#collapseMenu" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseMenu">
+                
+                    <!-- Hamburger icon -->
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                    </svg>
+                </a>
+            </span>
             
-            <!-- The footer rectangle -->
-            <div class="card border-0 m-2">
-                <div class="card-body p-2">
-                    
-                    <!-- The rows and columns of the footer -->
-                    <div class="row">
+            <!-- The title, with text-reset to make the links inherit their color, and pr-5 to give the corner space -->
+            <a href="about:blank" class="navbar-brand text-reset m-0 h1 pr-5 py-0" style="font-size: 2rem">UB Image Server</a>
+        </nav>
+        
+        <!-- The dropdown menu, implemented as a collaped card -->
+        <div>
+            <div class="collapse" id="collapseMenu" style="position: absolute; z-index:1001;">
+                <div class="menu-card card-body p-0">
+                
+                <!-- Drop down form -->
+                    <form class="form-row px-2">
                         <div class="col-9">
-                            <div class="card-text h-100 d-inline-flex align-items-center">Created by Joyce Sommer, Martin Donovan, Mohit Gokul Murali, Nick Anzalone, and Sean Jones for Fall 2020 CSE 442 at SUNY University at Buffalo.</div>
+                            <div class="form-group my-1 p-1">
+                                <label class="sr-only" for="menuUsername">Username</label>
+                                <input type="username" class="form-control" id="menuUsername" placeholder="Username">
+                            </div>
+                            <div class="form-group my-1 p-1">
+                                <label class="sr-only" for="menuPassword">Username</label>
+                                <input type="password" class="form-control" id="menuPassword" placeholder="Password">
+                            </div>
                         </div>
-                        
-                        <!-- text-reset makes the links inherit their color -->
-                        <div class="col-3 text-right">
-                            <div>
-                                <a href="about:blank" class="text-reset">Log In</a>
-                            </div>
-                            <div>
-                                <a href="about:blank" class="text-reset">Sign Up</a>
-                            </div>
-                            <div>
-                                <a href="about:blank" class="text-reset">About Us</a>
-                            </div>
-                            <div>
-                                <a href="about:blank" class="text-reset">Home</a>
+                        <div class="col-3 d-flex align-items-center">
+                            <button type="submit" class="btn btn-dark">
+                            
+                                <!-- Play icon -->
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <!-- Drop down links -->
+                    <div class="text-left px-3 pb-2" style="font-size: 1rem;">
+                        <a class="text-reset" href="about:blank">Log In</a>&nbsp;|&nbsp;<a class="text-reset" href="about:blank">Create Account</a>
+                    </div>
+                    <div class="d-inline-flex align-items-center text-center">
+                    </div>
+                    <a class="text-reset py-2" href="about:blank" style="font-size: 1.7rem">About Us</a>
+                    <a class="text-reset py-2" href="about:blank" style="font-size: 1.7rem">Home</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- The classes help format the sticky footer -->
+        <main role="main" class="flex-shrink-0">
+            <div id="content" class="container">
+            
+                <!-- Most of the body is here. It's just a row with an 8/12 column -->
+                <div class="row justify-content-center w-100 my-5">
+                    <div class="col-8">
+                    
+                        <!-- Need to make this section taller -->
+                        <div class="card text-center w-100 border-0 rounded-0" style="background-color: #9A9A9A;">
+                            <div class="card-body">
+                                <p class="card-text">Drag file here</p>
+                                <p class="card-text">-OR-</p>
+                                <p>
+                                    <input type="file" id="real-file" hidden="hidden"/>
+                                    <button type="button" id="cus-but"> Upload a file </button>
+                                    <span id="but-text"> No file uploaded </span>
+                                    <script>
+                                        cusButSetup();
+                                    </script>
+                                </p>
+                                <p>
+                                    <label for="url" id="url-text"> Enter link to image: </label>
+                                    <input type="url" id="web-file" placeholder="https://example.com"
+                                        size="23" required />
+                                    <button type="button" id="cus-but"> File upload </button>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-  </body>
+        </main>
+        
+        <!-- The footer -->
+        <footer class="footer mt-auto py-3">
+            <div class="container">
+            
+                <!-- The footer rectangle -->
+                <div class="card border-0 m-2">
+                    <div class="card-body p-2">
+                    
+                        <!-- The rows and columns of the footer -->
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="card-text h-100 d-inline-flex align-items-center">Created by Joyce Sommer, Martin Donovan, Mohit Gokul Murali, Nick Anzalone, and Sean Jones for Fall 2020 CSE 442 at SUNY University at Buffalo.</div>
+                            </div>
+                            
+                            <!-- text-reset makes the links inherit their color -->
+                            <div class="col-3 text-right">
+                                <div>
+                                    <a href="about:blank" class="text-reset">Log In</a>
+                                </div>
+                                <div>
+                                    <a href="about:blank" class="text-reset">Sign Up</a>
+                                </div>
+                                <div>
+                                    <a href="about:blank" class="text-reset">About Us</a>
+                                </div>
+                                <div>
+                                    <a href="about:blank" class="text-reset">Home</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        <script src="customfunctions.js"> </script>
+    </body>
 </html>
+
