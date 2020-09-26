@@ -22,6 +22,18 @@
               border-bottom-right-radius: 70rem;
               border-bottom-left-radius: 70rem;
         }
+        /* custom stuff for button appearance */
+        #cus-but {
+				padding: 5px;
+				color: white;
+				background-color: gray;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+		#but-text {
+				margin-left: 10px;
+				color: black;
+			}
     </style>
 
     <title>Home - Image Server</title>
@@ -36,7 +48,7 @@
         <!-- The dropdown menu, just a placeholder for now, pl-5 is there to give the corner space -->
         <span class="nav-item dropdown pl-5">
             <a class="nav-link dropdown-toggle text-reset" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            Menu
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="about:blank">About Us</a>
@@ -61,7 +73,35 @@
                         <div class="card-body">
                             <p class="card-text">Drag file here</p>
                             <p class="card-text">-OR-</p>
-                            <a href="#" class="btn btn-light">Click to Upload</a>
+                            <p>
+                                <input type="file" id="real-file" hidden="hidden"/>
+                                <button type="button" id="cus-but"> Upload a file </button>
+                                <span id="but-text"> No file uploaded </span>
+                                
+                                <script>
+                                    const realFile = document.getElementById("real-file");
+                                    const realButton = document.getElementById("cus-but");
+                                    const realSpan = document.getElementById("but-text");
+                                    
+                                    realButton.addEventListener("click", function() {
+                                        realFile.click();
+                                    });
+                                    
+                                    realFile.addEventListener("change", function() {
+                                        if (realFile.value) {
+                                            realSpan.innerHTML = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+                                        } else {
+                                            realSpan.innerHTML = "No file uploaded";
+                                        }
+                                    });
+                                </script>
+                            </p>
+                            <p>
+                                <label for="url" id="url-text"> Enter link to image: </label>
+                                <input type="url" id="web-file" placeholder="https://example.com"
+                                    size="23" required />
+                                <button type="button" id="cus-but"> File upload </button>
+                            </p> 
                         </div>
                     </div>
                 </div>
@@ -80,7 +120,7 @@
                     <!-- The rows and columns of the footer -->
                     <div class="row">
                         <div class="col-9">
-                            <div class="card-text h-100 d-inline-flex align-items-center">Created by Joyce Sommer, Martin Donovan, Mohit Gokul Murali, Nick Anzalone, and Sean Jones for Fall 2020 CSE 442 at SUNY University at Buffalo</div>
+                            <div class="card-text h-100 d-inline-flex align-items-center">Created by Joyce Sommer, Martin Donovan, Mohit Gokul Murali, Nick Anzalone, and Sean Jones for Fall 2020 CSE 442 at SUNY University at Buffalo.</div>
                         </div>
                         
                         <!-- text-reset makes the links inherit their color -->
