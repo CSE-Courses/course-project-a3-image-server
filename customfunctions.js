@@ -1,43 +1,34 @@
-// Upload button setup
-function cusButSetup() {
-    const realFile = document.getElementById("real-file");
-    const realButton = document.getElementById("cus-but");
-    const realSpan = document.getElementById("but-text");
+
+var ImgServerModel = {
     
-    realButton.addEventListener("click", function() {
-        realFile.click();
-    });
-    
-    realFile.addEventListener("change", function() {
+    fileChanged(realFile, realSpan) {
         if (realFile.value) {
-            realSpan.innerHTML = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            let realFileName  = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            ImgServerView.setElementText(realSpan, realFileName);
+            
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
         } else {
-            realSpan.innerHTML = "No file uploaded";
+            ImgServerView.setElementText(realSpan, "No file uploaded");
+            
             ImgServerView.clearImageDescription();
         }
-    });
-}
-
-
-
-var ImgServerController = {
+    },
     
-    // Adjust the navbar shape when the hamburger menu starts to open or finishes closing
-    setupMenuEvents() {
-        $('#collapseMenu').on('hidden.bs.collapse', function () {
-            document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom";
-        })
-        
-        $('#collapseMenu').on('show.bs.collapse', function () {
-            document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom-right";
-        })
+    menuOpening() {
+        ImgServerView.navbarSquareLeftCorner();
+    },
+    
+    menuClosed() {
+        ImgServerView.navbarRoundLeftCorner();
     }
-
+    
 }
-
 
 var ImgServerView = {
+    
+    setElementText(element, spanText) {
+        element.innerHTML = spanText;
+    },
    
     // Create a form to view and edit the description
     displayImageDescription(weatherDescription, geolocationDescription) {
@@ -117,5 +108,45 @@ var ImgServerView = {
         insertedButton.type = "button";
         insertedButton.className = "btn btn-secondary";
         insertedButton.innerHTML = buttonText;
+    },
+
+    navbarSquareLeftCorner() {
+        document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom-right";
+    },
+    
+    navbarRoundLeftCorner() {
+        document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom";
     }
+}
+
+var ImgServerController = {
+    
+    // Upload button setup
+    cusButSetup() {
+        const realFile = document.getElementById("real-file");
+        const realButton = document.getElementById("cus-but");
+        const realSpan = document.getElementById("but-text");
+        
+        realButton.addEventListener("click", function() {
+            realFile.click();
+        });
+        
+        realFile.addEventListener("change", function() {
+            ImgServerModel.fileChanged(realFile, realSpan);
+        });
+    },
+    
+    // Adjust the navbar shape when the hamburger menu starts to open or finishes closing
+    setupMenuEvents() {
+        $('#collapseMenu').on('hidden.bs.collapse', function () {
+            ImgServerModel.menuClosed();
+        })
+        
+        $('#collapseMenu').on('show.bs.collapse', function () {
+            ImgServerModel.menuOpening();
+        })
+    }
+    
+    
+
 }
