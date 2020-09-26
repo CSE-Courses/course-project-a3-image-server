@@ -9,8 +9,13 @@ $('#collapseMenu').on('show.bs.collapse', function () {
 })
 
 var ImgServerView = {
-    weatherbox(textInput) {
+    
+    clearImageDescription() {
         this.clearElement("imageDescription");
+    },
+    
+    displayImageDescription(weatherDescription, geolocationDescription) {
+        this.clearImageDescription();
     
         let descriptionForm = this.insertForm("imageDescription");
         
@@ -18,7 +23,17 @@ var ImgServerView = {
         
         this.insertLabel(weatherGroup, "weatherBox", "Weather");
         
-        this.insertInputBox(weatherGroup, "weatherBox", "Weather", textInput, true);
+        this.insertInputBox(weatherGroup, "weatherBox", "Weather", weatherDescription, true);
+        
+        let geolocationGroup = this.insertFormGroup(descriptionForm);
+        
+        this.insertLabel(weatherGroup, "geolocationBox", "Geolocation");
+        
+        this.insertInputBox(weatherGroup, "geolocationBox", "Geolocation", geolocationDescription, false);
+        
+        let buttonGroup = this.insertFormGroup(descriptionForm);
+        
+        this.insertButton(buttonGroup, "Confirm");
     },
     
     clearElement(elementId) {
@@ -64,5 +79,13 @@ var ImgServerView = {
         if (readOnly === true) {
             insertedBox.setAttribute("readonly", "readonly");
         }
+    },
+    
+    insertButton(group, buttonText) {
+        let insertedButton = document.createElement("button");
+        group.appendChild(insertedButton);
+        insertedButton.type = "button";
+        insertedButton.className = "btn btn-secondary";
+        insertedButton.innerHTML = buttonText;
     }
 }

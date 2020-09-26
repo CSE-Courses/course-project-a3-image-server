@@ -11,8 +11,10 @@ function cusButSetup() {
     realFile.addEventListener("change", function() {
         if (realFile.value) {
             realSpan.innerHTML = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
         } else {
             realSpan.innerHTML = "No file uploaded";
+            ImgServerView.clearImageDescription();
         }
     });
 }
