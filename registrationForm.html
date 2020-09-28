@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>Registration Form</title>
     <style>
+
+        /* CSS to format page */
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #dddddd;
@@ -20,6 +22,7 @@
             background-color: white;
         }
 
+        /* custom register button and input fields (Switch to bootstrap?) */
         input[type=text], input[type=password]{
             width: 25%;
             padding: 10px;
@@ -59,6 +62,7 @@
             color: dodgerblue;
         }
 
+        /* option to sign in link */
         .signin{
             background-color: #f1f1f1;
             text-align: center;
@@ -67,25 +71,37 @@
     </style>
 </head>
 <body>
-    <form action="register.php" method="post">
+    <form action="registerUser.php" method="post">
         <div class="container">
             <h1>Register</h1>
             <p>Please complete this form to create an account.</p>
             <hr>
+
+            <!-- input field for email -->
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+            <!-- input field for password -->
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+            <!-- input field for repeated password -->
             <label for="psw-repeat"><b>Repeat Password</b></label>
             <input type="password" placeholder="Enter your password again" name="psw-repeat" id="psw-repeat" required>
+
             <hr>
+            <!-- submit button -->
             <button type="submit" class="registerbtn">Register</button>
             </div>
+
+            <!-- Option to sign in for users who already have account -->
             <div class="container signin">
                 <p>Already have an account? <a href="#">Sign in</a>.</p>
             </div>
     </form>
 </body>
 </html>
+
+
 
 

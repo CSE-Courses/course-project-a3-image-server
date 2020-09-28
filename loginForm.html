@@ -1,4 +1,4 @@
-<!-- Sean Jones-->
+<!-- Sean Jones -->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title>Login Form</title>
     <style>
+
+        /* CSS to format page */
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #dddddd;
@@ -20,6 +22,7 @@
             background-color: white;
         }
 
+        /* custom sign in and input fields (Switch to bootstrap?) */
         .signinbtn{
             background-color: cornflowerblue;
             color: white;
@@ -58,6 +61,7 @@
             color: dodgerblue;
         }
 
+        /* forgotten info link format */
         .forgottenInfo{
             background-color: #f1f1f1;
             text-align: center;
@@ -66,18 +70,26 @@
     </style>
 </head>
 <body>
-<form action="login.php" method="post">
+<form action="loginUser.php" method="post">
     <div class="container signin">
         <h1>Sign in</h1>
         <p> Please enter in your credentials to access your account.</p>
         <hr>
+
+        <!-- input field for email -->
         <label for="email"><b>Email</b></label>
         <input type="text" placeholder="Enter your email here" name="email" id="email" required>
+
+        <!-- input field for password -->
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter your password here" name="psw" id="psw" required>
+
         <hr>
+        <!-- sign in button -->
         <button type="submit" class="signinbtn">Sign in</button>
     </div>
+
+    <!-- Forgotten info option -->
     <div class="container forgottenInfo">
         <p>Forgot your password or email? <a href="#">Retrieve info here</a>.</p>
     </div>
