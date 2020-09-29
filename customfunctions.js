@@ -1,14 +1,14 @@
 
 var ImgServerModel = {
     
-    fileChanged(realFile, realSpan) {
+    fileChanged(realFile) {
         if (realFile.value) {
             let realFileName  = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-            ImgServerView.setElementText(realSpan, realFileName);
+            ImgServerView.setElementText("but-text", realFileName);
             
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
         } else {
-            ImgServerView.setElementText(realSpan, "No file uploaded");
+            ImgServerView.setElementText("but-text", "No file uploaded");
             
             ImgServerView.clearImageDescription();
         }
@@ -26,27 +26,23 @@ var ImgServerModel = {
 
 var ImgServerView = {
     
-    setElementText(element, spanText) {
-        element.innerHTML = spanText;
-    },
-   
     // Create a form to view and edit the description
     displayImageDescription(weatherDescription, geolocationDescription) {
         this.clearImageDescription();
     
-        let descriptionForm = this.insertForm("imageDescription");
+        let descriptionForm = this.insertForm("imageDescription", "descriptionForm");
         
         let weatherGroup = this.insertFormGroup(descriptionForm);
         
         this.insertLabel(weatherGroup, "weatherBox", "Weather");
         
-        this.insertInputBox(weatherGroup, "weatherBox", "Weather", weatherDescription, true);
+        this.insertInputBox(weatherGroup, "weatherBox", "weather", "Weather", weatherDescription, true);
         
         let geolocationGroup = this.insertFormGroup(descriptionForm);
         
-        this.insertLabel(weatherGroup, "geolocationBox", "Geolocation");
+        this.insertLabel(geolocationGroup, "geolocationBox", "Geolocation");
         
-        this.insertInputBox(weatherGroup, "geolocationBox", "Geolocation", geolocationDescription, false);
+        this.insertInputBox(geolocationGroup, "geolocationBox", "geolocation", "Geolocation", geolocationDescription, false);
         
         let buttonGroup = this.insertFormGroup(descriptionForm);
         
@@ -54,19 +50,20 @@ var ImgServerView = {
     },
     
     clearImageDescription() {
-        this.clearElement("imageDescription");
+        this.setElementText("imageDescription", "");
     },
     
-    clearElement(elementId) {
-        let givenElement = document.getElementById(elementId);
-        givenElement.innerHTML =""; // Clear the element
+    setElementText(elementId, elementText) {
+        document.getElementById(elementId).innerHTML = elementText;
     },
     
-    insertForm(containerElementId) {
+    insertForm(containerElementId, formId) {
         let containerElement = document.getElementById(containerElementId);
         
         let insertedForm = document.createElement("form");
         containerElement.appendChild(insertedForm);
+        
+        insertedForm.id = formId;
         
         return (insertedForm);
     },
@@ -88,15 +85,17 @@ var ImgServerView = {
         weatherBoxLabel.innerHTML = labelText;
     },
     
-    insertInputBox(group, boxId, placeholder, textInput, readOnly) {
+    insertInputBox(group, boxId, boxName, placeholder, textInput, readOnly) {
         let insertedBox = document.createElement("input");
         group.appendChild(insertedBox);
         
-        insertedBox.type = "text";
+        
         insertedBox.id = boxId;
         insertedBox.className = "form-control";
+        insertedBox.name = boxName;
         insertedBox.setAttribute("placeholder", placeholder);
         insertedBox.value = textInput;
+        insertedBox.type = "text";
         if (readOnly === true) {
             insertedBox.setAttribute("readonly", "readonly");
         }
@@ -105,7 +104,7 @@ var ImgServerView = {
     insertButton(group, buttonText) {
         let insertedButton = document.createElement("button");
         group.appendChild(insertedButton);
-        insertedButton.type = "button";
+        insertedButton.type = "submit";
         insertedButton.className = "btn btn-secondary";
         insertedButton.innerHTML = buttonText;
     },
@@ -125,14 +124,13 @@ var ImgServerController = {
     cusButSetup() {
         const realFile = document.getElementById("real-file");
         const realButton = document.getElementById("cus-but");
-        const realSpan = document.getElementById("but-text");
         
         realButton.addEventListener("click", function() {
             realFile.click();
         });
         
         realFile.addEventListener("change", function() {
-            ImgServerModel.fileChanged(realFile, realSpan);
+            ImgServerModel.fileChanged(realFile);
         });
     },
     
@@ -146,7 +144,4 @@ var ImgServerController = {
             ImgServerModel.menuOpening();
         })
     }
-    
-    
-
 }
