@@ -43,3 +43,21 @@ body {
         margin-left: 10px;
         color: black;
     }
+
+/* custom stuff to blend drop box into theme
+    code from  */
+.dropbox {
+    height: 150px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: #212529;
+    background-color: #9A9A9A;
+}
+    
+.dropbox__input {
+    display: none;
+}

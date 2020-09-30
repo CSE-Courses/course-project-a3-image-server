@@ -29,19 +29,32 @@
                         <!-- Need to make this section taller -->
                         <div class="card text-center w-100 border-0 rounded-0" style="background-color: #9A9A9A;">
                             <div class="card-body">
-                                <p class="card-text">Drag file here</p>
+                                <p class="card-text">
+                                    <<!-- forgot to add where i got the drop and drag code from to edit to fit out needs
+                                        https://www.youtube.com/watch?v=Wtrin7C4b7w
+                                        creator: dcode
+                                        uploaded: 05/05/2020
+                                        length: 38:07 -->
+                                    <div class="dropbox">
+                                        <span class="dropbox__txt" id="db-text">Drop file here or click to upload</span>
+                                        <input type="file" name="daFile" class="dropbox__input" id="real-file">
+                                        <script>
+                                            ImgServerController.dragdrop();
+                                        </script>
+                                    </div>
+                                </p>
                                 <p class="card-text">-OR-</p>
-                                <p>
+ <!--                            <p>
                                     <input type="file" id="real-file" hidden="hidden"/>
                                     <button type="button" id="cus-but"> Upload a file </button>
                                     <span id="but-text"> No file uploaded </span>
                                     <script>
                                         ImgServerController.cusButSetup();
                                     </script>
-                                </p>
-                                <p>
-                                    <label for="url" id="url-text"> Enter link to image: </label>
-                                    <input type="url" id="web-file" placeholder="https://example.com"
+                                </p> -->
+                                <br>
+<!--                                    <label for="url" id="url-text"> Enter link to image: </label> -->
+                                    <input type="url" id="web-file" placeholder="Enter URL"
                                         size="23" required />
                                     <button type="button" id="cus-but"> File upload </button>
                                 </p>

@@ -227,6 +227,51 @@ var ImgServerController = {
             ImgServerModel.fileChanged(realFile);
         });
     },
+
+    // drop and drag things
+    dragdrop: function (){
+        document.querySelectorAll(".dropbox__input").forEach((inputElem) => {
+        const dropboxElem = inputElem.closest(".dropbox");
+        const dropboxSpan = document.getElementById("db-text");
+
+        dropboxElem.addEventListener("click", (e) => {
+            inputElem.click();
+        });
+
+        inputElem.addEventListener("change", (e) => {
+            if (inputElem.value) {
+                var holder = inputElem.value;
+
+                dropboxSpan.innerHTML = holder;
+                //.replace(/^.*(\\|\/|\:)/, '');
+            } else {
+                dropboxSpan.innerHTML = "No file uploaded";
+            }
+        });
+
+        dropboxElem.addEventListener("dragover", (e) => {
+            e.preventDefault();
+            dropboxElem.classList.add("dropbox--over");
+        });
+
+        ["dragleave", "dragend"].forEach((type) => {
+            dropboxElem.addEventListener(type, (e) => {
+            dropboxElem.classList.remove("dropbox--over");
+            });
+        });
+
+        dropboxElem.addEventListener("drop", (e) => {
+            e.preventDefault();
+
+            if (e.dataTransfer.files.length) {
+                inputElem.files = e.dataTransfer.files;
+                updateThumbnail(dropboxElem, e.dataTransfer.files[0]);
+            }
+
+            dropboxElem.classList.remove("dropbox--over");
+            });
+        });
+    },
     
     // Adjust the navbar shape when the hamburger menu starts to open or finishes closing
     setupMenuEvents: function () {
