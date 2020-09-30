@@ -87,19 +87,67 @@
                         <!-- Need to make this section taller -->
                         <div class="card text-center w-100 border-0 rounded-0" style="background-color: #9A9A9A;">
                             <div class="card-body">
-                                <p class="card-text">Drag file here</p>
+                                <p class="card-text">
+                                    <div class="dropbox">
+                                        <span class="dropbox__txt" id="db-text">Drop file here or click to upload</span>
+                                        <input type="file" name="daFile" class="dropbox__input" id="real-file">
+                                        <script>
+                                            document.querySelectorAll(".dropbox__input").forEach((inputElem) => {
+                                            const dropboxElem = inputElem.closest(".dropbox");
+                                            const dropboxSpan = document.getElementById("db-text");
+
+                                            dropboxElem.addEventListener("click", (e) => {
+                                                inputElem.click();
+                                            });
+
+                                            inputElem.addEventListener("change", (e) => {
+                                                if (inputElem.value) {
+                                                    var holder = inputElem.value;
+
+                                                    dropboxSpan.innerHTML = holder;
+                                                    //.replace(/^.*(\\|\/|\:)/, '');
+                                                } else {
+                                                    dropboxSpan.innerHTML = "No file uploaded";
+                                                }
+                                            });
+
+                                            dropboxElem.addEventListener("dragover", (e) => {
+                                                e.preventDefault();
+                                                dropboxElem.classList.add("dropbox--over");
+                                            });
+
+                                            ["dragleave", "dragend"].forEach((type) => {
+                                                dropboxElem.addEventListener(type, (e) => {
+                                                dropboxElem.classList.remove("dropbox--over");
+                                                });
+                                            });
+
+                                            dropboxElem.addEventListener("drop", (e) => {
+                                                e.preventDefault();
+
+                                                if (e.dataTransfer.files.length) {
+                                                    inputElem.files = e.dataTransfer.files;
+                                                    updateThumbnail(dropboxElem, e.dataTransfer.files[0]);
+                                                }
+
+                                                dropboxElem.classList.remove("dropbox--over");
+                                            });
+                                            });
+                                        </script>
+                                    </div>
+                                </p>
                                 <p class="card-text">-OR-</p>
-                                <p>
+ <!--                            <p>
                                     <input type="file" id="real-file" hidden="hidden"/>
                                     <button type="button" id="cus-but"> Upload a file </button>
                                     <span id="but-text"> No file uploaded </span>
                                     <script>
                                         ImgServerController.cusButSetup();
                                     </script>
-                                </p>
-                                <p>
-                                    <label for="url" id="url-text"> Enter link to image: </label>
-                                    <input type="url" id="web-file" placeholder="https://example.com"
+                                </p> -->
+                                <br>
+<!--                                    <label for="url" id="url-text"> Enter link to image: </label> -->
+                                    <input type="url" id="web-file" placeholder="Enter URL"
                                         size="23" required />
                                     <button type="button" id="cus-but"> File upload </button>
                                 </p>
