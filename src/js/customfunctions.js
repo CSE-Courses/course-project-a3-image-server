@@ -1,14 +1,14 @@
 
 var ImgServerModel = {
     
-    fileChanged: function (realFile) {
-        if (realFile.value) {
-            const realFileName  = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-            ImgServerView.setElementText("but-text", realFileName);
+    fileChanged: function (inputFile) {
+        if (inputFile.value) {
+            var inputFileName  = inputFile.value;
+            ImgServerView.setElementText("db-text", inputFileName);
             
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
         } else {
-            ImgServerView.setElementText("but-text", "No file uploaded");
+            ImgServerView.setElementText("db-text", "No file uploaded");
             
             ImgServerView.clearImageDescription();
         }
@@ -215,7 +215,7 @@ var ImgServerView = {
 var ImgServerController = {
     
     // Upload button setup
-    cusButSetup: function () {
+    /*cusButSetup: function () {
         const realFile = document.getElementById("real-file");
         const realButton = document.getElementById("cus-but");
         
@@ -226,7 +226,7 @@ var ImgServerController = {
         realFile.addEventListener("change", function() {
             ImgServerModel.fileChanged(realFile);
         });
-    },
+    },*/
 
     // drop and drag things
     dragdrop: function (){
@@ -239,14 +239,7 @@ var ImgServerController = {
         });
 
         inputElem.addEventListener("change", (e) => {
-            if (inputElem.value) {
-                var holder = inputElem.value;
-
-                dropboxSpan.innerHTML = holder;
-                //.replace(/^.*(\\|\/|\:)/, '');
-            } else {
-                dropboxSpan.innerHTML = "No file uploaded";
-            }
+            ImgServerModel.fileChanged(inputElem);
         });
 
         dropboxElem.addEventListener("dragover", (e) => {
@@ -265,14 +258,7 @@ var ImgServerController = {
 
             if (e.dataTransfer.files.length) {
                 inputElem.files = e.dataTransfer.files;
-                if (inputElem.value) {
-                    var holder = inputElem.value;
-    
-                    dropboxSpan.innerHTML = holder;
-                    //.replace(/^.*(\\|\/|\:)/, '');
-                } else {
-                    dropboxSpan.innerHTML = "No file uploaded";
-                }
+                ImgServerModel.fileChanged(inputElem);
             }
 
             dropboxElem.classList.remove("dropbox--over");
