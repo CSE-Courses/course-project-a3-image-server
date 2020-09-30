@@ -1,9 +1,9 @@
 
 var ImgServerModel = {
     
-    fileChanged(realFile) {
+    fileChanged: function (realFile) {
         if (realFile.value) {
-            let realFileName  = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+            const realFileName  = realFile.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
             ImgServerView.setElementText("but-text", realFileName);
             
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
@@ -14,11 +14,11 @@ var ImgServerModel = {
         }
     },
     
-    menuOpening() {
+    menuOpening: function () {
         ImgServerView.navbarSquareLeftCorner();
     },
     
-    menuClosed() {
+    menuClosed: function () {
         ImgServerView.navbarRoundLeftCorner();
     }
     
@@ -26,7 +26,7 @@ var ImgServerModel = {
 
 var ImgServerView = {
     
-    insertFooter() {
+    insertFooter: function () {
         document.getElementById("footer").innerHTML = "<div class=\"container\">\
         \
         <!-- The footer rectangle -->\
@@ -60,7 +60,7 @@ var ImgServerView = {
     <\/div>"; 
     },
     
-    insertNavbar() {
+    insertNavbar: function () {
      document.getElementById("navbar").innerHTML  = "<!-- The navbar -->\
         <nav id=\"cseNavbar\" class=\"navbar rounded-pill-bottom\" style=\"background-color: #918D85; color:#fff\">\
         \
@@ -121,40 +121,40 @@ var ImgServerView = {
     },
     
     // Create a form to view and edit the description
-    displayImageDescription(weatherDescription, geolocationDescription) {
+    displayImageDescription: function (weatherDescription, geolocationDescription) {
         this.clearImageDescription();
     
-        let descriptionForm = this.insertForm("imageDescription", "descriptionForm");
+        const descriptionForm = this.insertForm("imageDescription", "descriptionForm");
         
-        let weatherGroup = this.insertFormGroup(descriptionForm);
+        const weatherGroup = this.insertFormGroup(descriptionForm);
         
         this.insertLabel(weatherGroup, "weatherBox", "Weather");
         
         this.insertInputBox(weatherGroup, "weatherBox", "weather", "Weather", weatherDescription, true);
         
-        let geolocationGroup = this.insertFormGroup(descriptionForm);
+        const geolocationGroup = this.insertFormGroup(descriptionForm);
         
         this.insertLabel(geolocationGroup, "geolocationBox", "Geolocation");
         
         this.insertInputBox(geolocationGroup, "geolocationBox", "geolocation", "Geolocation", geolocationDescription, false);
         
-        let buttonGroup = this.insertFormGroup(descriptionForm);
+        const buttonGroup = this.insertFormGroup(descriptionForm);
         
         this.insertButton(buttonGroup, "Confirm");
     },
     
-    clearImageDescription() {
+    clearImageDescription: function () {
         this.setElementText("imageDescription", "");
     },
     
-    setElementText(elementId, elementText) {
+    setElementText: function (elementId, elementText) {
         document.getElementById(elementId).innerHTML = elementText;
     },
     
-    insertForm(containerElementId, formId) {
-        let containerElement = document.getElementById(containerElementId);
+    insertForm: function (containerElementId, formId) {
+        const containerElement = document.getElementById(containerElementId);
         
-        let insertedForm = document.createElement("form");
+        const insertedForm = document.createElement("form");
         containerElement.appendChild(insertedForm);
         
         insertedForm.id = formId;
@@ -162,8 +162,8 @@ var ImgServerView = {
         return (insertedForm);
     },
     
-    insertFormGroup(insertedForm) {
-        let insertedNode = document.createElement("div");
+    insertFormGroup: function (insertedForm) {
+        const insertedNode = document.createElement("div");
         insertedForm.appendChild(insertedNode);
         
         insertedNode.className="form-group";
@@ -171,16 +171,16 @@ var ImgServerView = {
         return(insertedNode);
     },
     
-    insertLabel(group, labeledElement, labelText) {
-        let weatherBoxLabel = document.createElement("label");
+    insertLabel: function (group, labeledElement, labelText) {
+        const weatherBoxLabel = document.createElement("label");
         group.appendChild(weatherBoxLabel);
         
         weatherBoxLabel.setAttribute("for", labeledElement);
         weatherBoxLabel.innerHTML = labelText;
     },
     
-    insertInputBox(group, boxId, boxName, placeholder, textInput, readOnly) {
-        let insertedBox = document.createElement("input");
+    insertInputBox: function (group, boxId, boxName, placeholder, textInput, readOnly) {
+        const insertedBox = document.createElement("input");
         group.appendChild(insertedBox);
         
         
@@ -195,19 +195,19 @@ var ImgServerView = {
         }
     },
     
-    insertButton(group, buttonText) {
-        let insertedButton = document.createElement("button");
+    insertButton: function (group, buttonText) {
+        const insertedButton = document.createElement("button");
         group.appendChild(insertedButton);
         insertedButton.type = "submit";
         insertedButton.className = "btn btn-secondary";
         insertedButton.innerHTML = buttonText;
     },
 
-    navbarSquareLeftCorner() {
+    navbarSquareLeftCorner: function () {
         document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom-right";
     },
     
-    navbarRoundLeftCorner() {
+    navbarRoundLeftCorner: function () {
         document.getElementById("cseNavbar").className ="navbar rounded-pill-bottom";
     }
 }
@@ -215,7 +215,7 @@ var ImgServerView = {
 var ImgServerController = {
     
     // Upload button setup
-    cusButSetup() {
+    cusButSetup: function () {
         const realFile = document.getElementById("real-file");
         const realButton = document.getElementById("cus-but");
         
@@ -229,7 +229,7 @@ var ImgServerController = {
     },
     
     // Adjust the navbar shape when the hamburger menu starts to open or finishes closing
-    setupMenuEvents() {
+    setupMenuEvents: function () {
         $('#collapseMenu').on('hidden.bs.collapse', function () {
             ImgServerModel.menuClosed();
         })
