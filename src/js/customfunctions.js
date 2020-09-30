@@ -85,15 +85,15 @@ var ImgServerView = {
                 <div class=\"menu-card card-body p-0\">\
                 \
                 <!-- Drop down form -->\
-                    <form class=\"form-row px-2\">\
+                    <form class=\"form-row px-2\" action=\"action_login.php\"method=\"post\">\
                         <div class=\"col-9\">\
                             <div class=\"form-group my-1 p-1\">\
-                                <label class=\"sr-only\" for=\"menuUsername\">Username<\/label>\
-                                <input type=\"username\" class=\"form-control\" id=\"menuUsername\" placeholder=\"Username\">\
+                                <label class=\"sr-only\" for=\"menuEmail\">Email<\/label>\
+                                <input type=\"text\" class=\"form-control\" id=\"menuEmail\" name=\"email\" placeholder=\"Email\" required>\
                             <\/div>\
                             <div class=\"form-group my-1 p-1\">\
                                 <label class=\"sr-only\" for=\"menuPassword\">Password<\/label>\
-                                <input type=\"password\" class=\"form-control\" id=\"menuPassword\" placeholder=\"Password\">\
+                                <input type=\"password\" class=\"form-control\" id=\"menuPassword\" name=\"psw\" placeholder=\"Password\" required>\
                             <\/div>\
                         <\/div>\
                         <div class=\"col-3 d-flex align-items-center\">\
