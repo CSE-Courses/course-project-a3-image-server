@@ -265,7 +265,14 @@ var ImgServerController = {
 
             if (e.dataTransfer.files.length) {
                 inputElem.files = e.dataTransfer.files;
-                updateThumbnail(dropboxElem, e.dataTransfer.files[0]);
+                if (inputElem.value) {
+                    var holder = inputElem.value;
+    
+                    dropboxSpan.innerHTML = holder;
+                    //.replace(/^.*(\\|\/|\:)/, '');
+                } else {
+                    dropboxSpan.innerHTML = "No file uploaded";
+                }
             }
 
             dropboxElem.classList.remove("dropbox--over");
