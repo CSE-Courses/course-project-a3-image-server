@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
         <!-- local bootstrap css-->
-        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
         
         <!-- custom stylesheet -->
-        <link rel="stylesheet" href="customstyle.css">
+        <link rel="stylesheet" href="styles/customstyle.css">
         
         <title>Home - Image Server</title>
     </head>
@@ -16,7 +16,7 @@
     <!-- The classes help format the sticky footer -->
     <body class="d-flex flex-column h-100">
     
-        <script src="customfunctions.js"> </script>
+        <script src="js/customfunctions.js"> </script>
     
         <!-- The navbar -->
         <nav id="cseNavbar" class="navbar rounded-pill-bottom" style="background-color: #918D85; color:#fff">
@@ -49,7 +49,7 @@
                                 <input type="username" class="form-control" id="menuUsername" placeholder="Username">
                             </div>
                             <div class="form-group my-1 p-1">
-                                <label class="sr-only" for="menuPassword">Username</label>
+                                <label class="sr-only" for="menuPassword">Password</label>
                                 <input type="password" class="form-control" id="menuPassword" placeholder="Password">
                             </div>
                         </div>
@@ -82,7 +82,6 @@
             
                 <!-- Most of the body is here. It's just a row with an 8/12 column -->
                 <div class="row justify-content-center w-100 my-5">
-                    <div class="col-2"></div>
                     <div class="col-8">
                     
                         <!-- Need to make this section taller -->
@@ -107,7 +106,9 @@
                             </div>
                         </div>
                     </div>
-                    <div id="imageDescription" class="col-2"></div>
+                </div>
+                <div class="row justify-content-center w-100 my-5">
+                    <div id="imageDescription" class="col-8"></div>
                 </div>
             </div>
         </main>
