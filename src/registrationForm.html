@@ -1,78 +1,28 @@
 <!-- Sean Jones -->
 <!DOCTYPE html>
 
-<html lang="en">
+<html class="h-100" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Registration Form</title>
-    <style>
-
-        /* CSS to format page */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #dddddd;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        .container {
-            padding: 20px;
-            background-color: white;
-        }
-
-        /* custom register button and input fields (Switch to bootstrap?) */
-        input[type=text], input[type=password]{
-            width: 25%;
-            padding: 10px;
-            margin: 5px 0 22px 0;
-            display: table;
-            background: #f1f1f1;
-            alignment: center;
-        }
-
-        input[type=text]:focus, input[type=password]:focus{
-            background-color: #dddddd;
-            outline: none;
-        }
-
-        .registerbtn{
-            background-color: cornflowerblue;
-            color: white;
-            padding: 16px 20px;
-            margin: 16px 0;
-            cursor: pointer;
-            width: 10%;
-            opacity: 0.8;
-        }
-
-        hr {
-            height: 1px;
-            color: #dddddd;
-            width: 30%;
-            margin-left: 5px;
-        }
-
-        .registerbtn:hover{
-            opacity: 100%;
-        }
-
-        a {
-            color: dodgerblue;
-        }
-
-        /* option to sign in link */
-        .signin{
-            background-color: #f1f1f1;
-            text-align: center;
-        }
-
-    </style>
+    
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/customstyle.css">
+    <!--<link rel="stylesheet" href="./styles/loginstyle.css">-->
+    
 </head>
-<body>
+<!-- The classes help format the sticky footer -->
+<body class="d-flex flex-column h-100">
+    <script src="./js/customfunctions.js"> </script>
+    
+    <div id="navbar"></div>
+    <br><br>
+    <main role="main" class="flex-shrink-0">
+    <div id="content" class="container pb-0" style="background-color:#9A9A9A; padding-right:0; padding-left:0;">
+    
+    
     <form action="action_register.php" method="post">
-        <div class="container">
+        <div class="loginContainer container" style="background-color: #9A9A9A;">
             <h1>Register</h1>
             <p>Please complete this form to create an account.</p>
             <hr>
@@ -95,10 +45,31 @@
             </div>
 
             <!-- Option to sign in for users who already have account -->
-            <div class="container signin">
-                <p>Already have an account? <a href="loginForm.html">Sign in</a>.</p>
+            <div class="loginContainer container signin d-inline-flex align-items-center" style="background-color: #706f6f;">
+                <p class="text-center w-100 my-0">Already have an account? <a href="loginForm.html" style="color: #fff;">Sign in</a>.</p>
             </div>
     </form>
+    
+      </div>
+      </main>
+
+      <br>
+
+      <!-- The footer -->
+      <footer id="footer" class="footer mt-auto py-3"></footer> 
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      
+      <script>
+          ImgServerView.insertNavbar();
+          ImgServerView.insertFooter();
+          ImgServerController.setupMenuEvents();
+      </script>
+      
 </body>
 </html>
 

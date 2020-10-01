@@ -1,0 +1,77 @@
+        /* CSS to format page */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #dddddd;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .loginContainer {
+            padding: 20px;
+            background-color: white;
+        }
+
+        /* custom sign in, register button, and input fields (Switch to bootstrap?) */
+        .signinbtn{
+            background-color: cornflowerblue;
+            color: white;
+            cursor: pointer;
+            opacity: 0.8;
+            padding: 16px 20px;
+            margin: 16px 0;
+        }
+
+        .signin:hover{
+            opacity: 1;
+        }
+
+        input[type=text], input[type=password]{
+            width: 50%;
+            padding: 10px;
+            margin: 5px 0 22px 0;
+            display: table;
+            background: #f1f1f1;
+            alignment: center;
+        }
+
+        input[type=text]:focus, input[type=password]:focus{
+            background-color: #dddddd;
+            outline: none;
+        }
+
+        .registerbtn{
+            background-color: cornflowerblue;
+            color: white;
+            padding: 16px 20px;
+            margin: 16px 0;
+            cursor: pointer;
+            width: 8rem;
+            opacity: 0.8;
+        }
+        hr {
+            height: 1px;
+            color: #dddddd;
+            width: 30%;
+            margin-left: 5px;
+        }
+
+        .registerbtn:hover{
+            opacity: 100%;
+        }
+        a {
+            color: dodgerblue;
+        }
+
+        /* forgotten info link format */
+        .forgottenInfo{
+            background-color: #f1f1f1;
+            text-align: center;
+        }
+        
+        /* option to sign in link */
+        .signin{
+            background-color: #f1f1f1;
+            text-align: center;
+        }
