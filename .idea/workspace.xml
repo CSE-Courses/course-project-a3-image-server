@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="Task #11                   &#10;complete html for Registration form" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
+  <component name="ProjectId" id="1ht6P0bUIRdusWc0rnOrz3doay9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="" />
+      <created>1600818014186</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600818014186</updated>
+      <workItem from="1600818015984" duration="843000" />
+      <workItem from="1600819736166" duration="7915000" />
+      <workItem from="1601158599681" duration="9346000" />
+      <workItem from="1601428480688" duration="1308000" />
+    </task>
+    <task id="LOCAL-00001" summary="Task #11&#10;complete html for registration">
+      <created>1600869340295</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600869340295</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Task #11&#10;complete html for registration and sign in forms">
+      <created>1600888441490</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600888441490</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Task #13&#10;complete html for sign in form">
+      <created>1600902015105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1600902015105</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Task #11&#10;complete html for Registration form">
+      <created>1600955998613</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1600955998613</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Task #11 and #13 documentation and switch to html">
+      <created>1601334669652</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601334669652</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Task #20 - Establishing connections with backend db to login/register users">
+      <created>1601389180101</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601389180101</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Task #11 and #13 - Correcting git commit issue">
+      <created>1601390383029</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601390383029</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Task #11 and #13 - Correcting git commit issue">
+      <created>1601390450145</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601390450145</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Task #11&#10;complete html for registration" />
+    <MESSAGE value="Task #11&#10;complete html for registration and sign in forms" />
+    <MESSAGE value="Task #13&#10;complete html for sign in form" />
+    <MESSAGE value="Task #11&#10;complete html for Registration form" />
+    <MESSAGE value="Task #11 and #13 documentation and switch to html" />
+    <MESSAGE value="Task #20 - Establishing connections with backend db to login/register users" />
+    <MESSAGE value="Task #11 and #13 - Correcting git commit issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #11 and #13 - Correcting git commit issue" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="211" y="81" key="#CLI_Interpreters/0.0.1440.900@0.0.1440.900" timestamp="1600820485196" />
+    <state x="62" y="76" key="#CLI_Interpreters/0.23.1440.820@0.23.1440.820" timestamp="1600818348886" />
+    <state x="445" y="281" key="#Notifications" timestamp="1600818556435">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="445" y="281" key="#Notifications/0.0.1440.900@0.0.1440.900" timestamp="1600818556435" />
+    <state x="211" y="74" key="#PHP" timestamp="1600820487025">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="211" y="74" key="#PHP/0.0.1440.900@0.0.1440.900" timestamp="1600820487025" />
+    <state x="211" y="90" key="#PHP/0.23.1440.820@0.23.1440.820" timestamp="1600818350963" />
+    <state x="502" y="235" key="#Web_Browsers" timestamp="1601429193496">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="502" y="235" key="#Web_Browsers/0.0.1440.900@0.0.1440.900" timestamp="1601429193496" />
+    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1601342584737">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1601342584737" />
+    <state x="221" y="89" key="SettingsEditor" timestamp="1600820028515">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1601390453845">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1601390453845" />
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1600818659859">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1600818659859" />
+  </component>
+</project>
