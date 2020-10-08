@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+//global connection variable from connect_db.php
+global $conn;
+
 if(isset($_POST['email'], $_POST['psw'])){
 
     //get email and psw variables

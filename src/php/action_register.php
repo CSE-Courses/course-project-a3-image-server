@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+//global connection variable from connect_db.php
+global $conn;
+
 if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
 
     // get values from post
