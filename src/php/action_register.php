@@ -16,16 +16,8 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
         exit();
     }
 
-    // connect to database
-    $conn = mysqli_connect('tethys.cse.buffalo.edu', 'seanjone', '50233994', 'cse442_542_2020_fall_teame_db');
-
-    //check for connection
-    if (!$conn) {
-        echo "Database Connection Failed";
-        echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-        echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-        exit();
-    }
+    //connect to db
+    include 'connect_db.php';
 
     //make query to database to see if user already exists
     $query = mysqli_query($conn, "select * from 'user_table' where email = '$email' ");
