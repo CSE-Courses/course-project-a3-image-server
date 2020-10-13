@@ -16,30 +16,30 @@ if(isset($_POST['email'], $_POST['psw'])){
     include 'connect_db.php';
 
     //make query to MySQL database
-    $query = mysqli_query($conn, "select * from 'user_table' where email = '$email'");
+    $query = mysqli_query($conn, "SELECT * FROM `user_table` WHERE email = '$email'");
     $rows = mysqli_num_rows($query);
     $user_info = mysqli_fetch_array($query);
 
     if($rows == 0){
         $_SESSION['message'] = "Email or password incorrect.";
-        header('location:loginForm.html');
+        header('location:./styles/loginForm.html');
         exit();
     } else {
         if(password_verify($psw, $user_info['psw']) == 1){
-            //bring back to honmepage
+            //bring back to homepage
             //look into session ids
-            header('location:homepage.html');
+            header('location:./styles/index.html');
             exit();
         } else {
             //incorrect password
             $_SESSION['message'] = "Password incorrect.";
-            header('location:loginForm.html');
+            header('location:./styles/loginForm.html');
             exit();
         }
     }
 } else {
     $_SESSION['message'] = "Error processing submitted form.";
-    header('location:loginForm.html');
+    header('location:./styles/loginForm.html');
     exit();
 }
 
