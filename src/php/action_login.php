@@ -25,7 +25,7 @@ if(isset($_POST['email'], $_POST['psw'])){
         header('location:./styles/loginForm.html');
         exit();
     } else {
-        if(password_verify($psw, $user_info['psw']) == 1){
+        if(password_verify($psw, $user_info['password'])){
             //bring back to homepage
             //look into session ids
             header('location:./styles/index.html');

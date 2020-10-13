@@ -22,7 +22,6 @@
     <list default="true" id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="Task #11                   &#10;complete html for Registration form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/action_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/action_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/php/action_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/action_register.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +67,7 @@
       <workItem from="1600819736166" duration="7915000" />
       <workItem from="1601158599681" duration="9346000" />
       <workItem from="1601428480688" duration="2069000" />
-      <workItem from="1601584131470" duration="12438000" />
+      <workItem from="1601584131470" duration="14217000" />
     </task>
     <task id="LOCAL-00001" summary="Task #11&#10;complete html for registration">
       <created>1600869340295</created>
@@ -140,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602179728664</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Task #20 - Only issue is returning back to homepage">
+      <created>1602623512827</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602623512827</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +173,8 @@
     <MESSAGE value="Task #20 - Establishing connections with backend db to login/register users" />
     <MESSAGE value="Task #11 and #13 - Correcting git commit issue" />
     <MESSAGE value="Task #20 - Almost finished with login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #20 - Almost finished with login" />
+    <MESSAGE value="Task #20 - Only issue is returning back to homepage" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #20 - Only issue is returning back to homepage" />
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
@@ -204,11 +211,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1602179733404">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1602623520440">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1602179733404" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1602623520440" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1600818659859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
