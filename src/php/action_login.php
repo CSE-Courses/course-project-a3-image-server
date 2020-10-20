@@ -10,8 +10,6 @@ if(isset($_POST['email'], $_POST['psw'])){
     $email = $_POST['email'];
     $psw = $_POST['psw'];
 
-    //validate email given (file to be written)
-
     //connect to db
     include 'connect_db.php';
 
@@ -22,24 +20,26 @@ if(isset($_POST['email'], $_POST['psw'])){
 
     if($rows == 0){
         $_SESSION['message'] = "Email or password incorrect.";
-        header('location:./styles/loginForm.html');
+        header('location: ../loginForm.html');
         exit();
     } else {
         if(password_verify($psw, $user_info['password'])){
             //bring back to homepage
             //look into session ids
-            header('location:./styles/index.html');
+            //set login status for this user to be true (1)
+            mysqli_query($conn, "UPDATE `user_table` SET login_status = 1 WHERE email = '$email'");
+            header('location: ../index.html');
             exit();
         } else {
             //incorrect password
             $_SESSION['message'] = "Password incorrect.";
-            header('location:./styles/loginForm.html');
+            header('location: ../loginForm.html');
             exit();
         }
     }
 } else {
     $_SESSION['message'] = "Error processing submitted form.";
-    header('location:./styles/loginForm.html');
+    header('location: ../loginForm.html');
     exit();
 }
 

@@ -11,12 +11,10 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
     $psw = $_POST['psw'];
     $psw_repeat = $_POST['psw-repeat'];
 
-    //validate email here
-
     //make sure passwords match
     if($psw != $psw_repeat){
         $_SESSION['message'] = "Passwords do not match.";
-        header('Location: https://www.google.com');
+        header('Location: ../registrationForm.html');
         exit();
     }
 
@@ -28,20 +26,20 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
     $rows = mysqli_num_rows($query);
     if($rows != 0){
         $_SESSION['message'] = "Email already in use. Please use a different email.";
-        header('Location: https://www.google.com');
+        header('Location: ../registrationForm.html');
         exit();
     }
 
     //if not in database, insert new user into db
     $hash_psw = password_hash($psw, PASSWORD_BCRYPT, ['cost' => 12]);
-    $insert_query = mysqli_query($conn, "INSERT INTO `user_table` (email, password) VALUES ('$email','$hash_psw')");
+    $insert_query = mysqli_query($conn, "INSERT INTO `user_table` (email, password, login_status) VALUES ('$email','$hash_psw',1)");
 
     //back to homepage
-    header('Location: ../styles/index.html');
+    header('Location: ../index.html');
     exit();
 } else {
     $_SESSION['message'] = "Error processing submitted form.";
-    header('Location: https://www.google.com');
+    header('Location: ../registrationForm.html');
     exit();
 }
 
