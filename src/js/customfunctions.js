@@ -64,16 +64,22 @@ var ImgServerView = {
      document.getElementById("navbar").innerHTML  = "<!-- The navbar -->\
         <nav id=\"cseNavbar\" class=\"navbar rounded-pill-bottom\" style=\"background-color: #918D85; color:#fff\">\
         \
-            <!-- The dropdown menu, just a placeholder for now, pl-5 is there to give the corner space -->\
-            <span class=\"nav-item pl-5\">\
-                <a class=\"nav-link text-reset\" href=\"#collapseMenu\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"collapseMenu\">\
-        \
-                    <!-- Hamburger icon -->\
-                    <svg width=\"2em\" height=\"2em\" viewBox=\"0 0 16 16\" class=\"bi bi-list\" fill=\"currentColor\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\
-                        <path fill-rule=\"evenodd\" d=\"M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z\"\/>\
-                    <\/svg>\
-                <\/a>\
-            <\/span>\
+            <div>\
+                <ul class=\"navbar-nav flex-row mr-auto pl-5\">\
+                    <!-- The dropdown menu, just a placeholder for now, pl-5 is there to give the corner space -->\
+                        <li class=\"nav-item\">\
+                                <a class=\"nav-link text-reset\" href=\"#collapseMenu\" role=\"button\" data-toggle=\"collapse\" aria-expanded=\"false\" aria-controls=\"collapseMenu\">\
+                                    \
+                                    <!-- Hamburger icon -->\
+                                    <svg width=\"2em\" height=\"2em\" viewBox=\"0 0 16 16\" class=\"bi bi-list\" fill=\"currentColor\" xmlns=\"http://www.w3.org/2000/svg\">\
+                                        <path fill-rule=\"evenodd\" d=\"M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z\"></path>\
+                                    </svg>\
+                                </a>\
+                            </li>\
+                        <li class=\"nav-item d-inline-flex align-items-center pl-5\" id=\"sessionName\">\
+                    </li>\
+                </ul>\
+            </div>\
             \
             <!-- The title, with text-reset to make the links inherit their color, and pr-5 to give the corner space -->\
             <a href=\"index.html\" class=\"navbar-brand text-reset m-0 h1 pr-5 py-0\" style=\"font-size: 2rem\">UB Image Server<\/a>\
@@ -85,7 +91,7 @@ var ImgServerView = {
                 <div class=\"menu-card card-body p-0\">\
                 \
                 <!-- Drop down form -->\
-                    <form class=\"form-row px-2\" action=\"action_login.php\"method=\"post\">\
+                    <form class=\"form-row px-2\" action=\"./php/action_login.php\"method=\"post\">\
                         <div class=\"col-9\">\
                             <div class=\"form-group my-1 p-1\">\
                                 <label class=\"sr-only\" for=\"menuEmail\">Email<\/label>\
@@ -118,6 +124,11 @@ var ImgServerView = {
                 <\/div>\
             <\/div>\
         <\/div>";  
+    },
+    
+    updateName(name) {
+        var nameElement = document.getElementById("sessionName");
+        nameElement.innerHTML = name;
     },
     
     // Create a form to view and edit the description
