@@ -44,5 +44,11 @@ if(isset($_POST['email'], $_POST['psw'])){
     header('location: ../loginForm.html');
     exit();
 }
+?>
+
+<script type="text/javascript"> const name = "<?= $_SESSION['email'] ?>";</script>
+<script type="text/javascript" src="../js/customfunctions.js">
+    ImgServerView.updateName(name);
+</script>
 
 
