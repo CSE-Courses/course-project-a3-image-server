@@ -34,8 +34,8 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
     $hash_psw = password_hash($psw, PASSWORD_BCRYPT, ['cost' => 12]);
     $insert_query = mysqli_query($conn, "INSERT INTO `user_table` (email, password, login_status) VALUES ('$email','$hash_psw',1)");
 
-    //back to homepage
-    header('Location: ../index.html');
+    //back to loginpage
+    header('Location: ../loginForm.html');
     exit();
 } else {
     $_SESSION['message'] = "Error processing submitted form.";

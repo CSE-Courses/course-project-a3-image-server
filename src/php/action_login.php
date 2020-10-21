@@ -25,8 +25,10 @@ if(isset($_POST['email'], $_POST['psw'])){
     } else {
         if(password_verify($psw, $user_info['password'])){
             //bring back to homepage
-            //look into session ids
             //set login status for this user to be true (1)
+            //set up session variables
+            $_SESSION['email'] = $email;
+            $_SESSION['id'] = $user_info['id'];
             mysqli_query($conn, "UPDATE `user_table` SET login_status = 1 WHERE email = '$email'");
             header('location: ../index.html');
             exit();
