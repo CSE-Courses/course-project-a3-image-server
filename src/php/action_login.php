@@ -5,7 +5,6 @@ session_start();
 global $conn;
 
 if(isset($_POST['email'], $_POST['psw'])){
-
     //get email and psw variables
     $email = $_POST['email'];
     $psw = $_POST['psw'];
@@ -28,7 +27,11 @@ if(isset($_POST['email'], $_POST['psw'])){
             //set login status for this user to be true (1)
             //set up session variables
             $_SESSION['email'] = $email;
-            $_SESSION['id'] = $user_info['id'];
+            //initialize cookie to store username
+            $cookie_name = 'username';
+            $cookie_value = $email;
+            setcookie($cookie_name,$cookie_value);
+            //update sql database to show user logged in
             mysqli_query($conn, "UPDATE `user_table` SET login_status = 1 WHERE email = '$email'");
             header('location: ../index.html');
             exit();
@@ -45,9 +48,8 @@ if(isset($_POST['email'], $_POST['psw'])){
     exit();
 }
 ?>
-
-<script type="text/javascript"> const name = "<?= $_SESSION['email'] ?>";</script>
 <script type="text/javascript" src="../js/customfunctions.js">
+    const name = "<?= $_SESSION['email'] ?>";
     ImgServerView.updateName(name);
 </script>
 
