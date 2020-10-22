@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="Task #11                   &#10;complete html for Registration form">
-      <change afterPath="$PROJECT_DIR$/src/php/processimage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/php/uploadimage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/processimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/processimage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603236153086</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Task #42 - Upload image to tmp folder">
+      <created>1603330059210</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1603330059210</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +205,8 @@
     <MESSAGE value="Task #20 - Only issue is returning back to homepage" />
     <MESSAGE value="Merge Task #20" />
     <MESSAGE value="Task #41 - Finished page redirect" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #41 - Finished page redirect" />
+    <MESSAGE value="Task #42 - Upload image to tmp folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Upload image to tmp folder" />
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
@@ -226,19 +235,19 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1602620215385" />
-    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1603326998391">
+    <state x="539" y="380" key="NewPhpFileDialog" timestamp="1603331099702">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1603326998391" />
+    <state x="539" y="380" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1603331099702" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1600820028515">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603236178565">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603330064422">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603236178565" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603330064422" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1600818659859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
