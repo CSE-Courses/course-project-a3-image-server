@@ -3,12 +3,12 @@ var ImgServerModel = {
     
     fileChanged: function (inputFile) {
         if (inputFile.value) {
-            var inputFileName  = inputFile.value;
+            var inputFileName  = inputFile.files[0].name;
             
             ImgServerView.setElementText("db-text", inputFileName);
             
-            ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
             ImgServerView.createImageForm(inputFile);
+            ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
         } else {
             ImgServerView.setElementText("db-text", "No file uploaded");
             
@@ -128,7 +128,7 @@ var ImgServerView = {
     
     // Create a form to view and edit the description
     displayImageDescription: function (weatherDescription, geolocationDescription) {
-        this.clearImageDescription();
+        //this.clearImageDescription();
     
         const descriptionForm = this.insertForm("imageDescription", "descriptionForm");
         
@@ -152,27 +152,29 @@ var ImgServerView = {
     createImageForm: function (image) {        
         const imageForm = this.insertForm("imageDescription", "imageForm");
         
-        imageForm.className="d-none";
+        //imageForm.className="d-none";
         
         imageForm.action="./php/uploadimage.php"
 
         imageForm.method="post";
 
-	imageForm.enctype="multipart/form-data";
+        imageForm.enctype="multipart/form-data";
         
         const imageGroup = this.insertFormGroup(imageForm);
         
+        imageGroup.className="d-none";
+        
         this.insertLabel(imageGroup, "imageElement", "Image");
         
-        this.insertImageBox(imageGroup, "file_upload", "file_upload", "Image", image, true);
+        const imageInput = this.insertImageBox(imageGroup, "file_upload", "file_upload", "Image", image, true);
         
         const buttonGroup = this.insertFormGroup(imageForm);
         
-        this.insertButton(buttonGroup, "Confirm");
+        this.insertButton(buttonGroup, "Upload Image");
 
-	document.getElementById("file_upload").files = document.getElementById("real-file").files;
+        imageInput.files = document.getElementById("real-file").files;
         
-        imageForm.submit(); 
+        //imageForm.submit(); 
     },
     
     clearImageDescription: function () {
@@ -249,6 +251,8 @@ var ImgServerView = {
         if (readOnly === true) {
             insertedBox.setAttribute("readonly", "readonly");
         }
+        
+        return insertedBox;
     },
     
     insertButton: function (group, buttonText) {
