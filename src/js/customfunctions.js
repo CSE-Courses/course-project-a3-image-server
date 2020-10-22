@@ -4,6 +4,7 @@ var ImgServerModel = {
     fileChanged: function (inputFile) {
         if (inputFile.value) {
             var inputFileName  = inputFile.value;
+            ImgServerView.createImageForm(inputFile);
             ImgServerView.setElementText("db-text", inputFileName);
             
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
@@ -20,6 +21,10 @@ var ImgServerModel = {
     
     menuClosed: function () {
         ImgServerView.navbarRoundLeftCorner();
+    },
+    
+    generateImageForm: function () {
+        
     }
     
 }
@@ -143,6 +148,29 @@ var ImgServerView = {
         this.insertButton(buttonGroup, "Confirm");
     },
     
+    createImageForm: function (image) {
+        
+        const imageForm = this.insertForm("imageDescription", "imageForm");
+        
+        imageForm.className="d-none";
+        
+        imageForm.action="../php/uploadimage.php"
+
+        imageForm.method="post";
+        
+        const imageGroup = this.insertFormGroup(imageForm);
+        
+        this.insertLabel(imageGroup, "imageElement", "Image");
+        
+        this.insertImageBox(imageGroup, "file_upload", "file_upload", "Image", image, true);
+        
+        const buttonGroup = this.insertFormGroup(imageForm);
+        
+        this.insertButton(buttonGroup, "Confirm");
+        
+        imageForm.submit(); 
+    },
+    
     clearImageDescription: function () {
         this.setElementText("imageDescription", "");
     },
@@ -154,6 +182,15 @@ var ImgServerView = {
     insertForm: function (containerElementId, formId) {
         const containerElement = document.getElementById(containerElementId);
         
+        const insertedForm = document.createElement("form");
+        containerElement.appendChild(insertedForm);
+        
+        insertedForm.id = formId;
+        
+        return (insertedForm);
+    },
+    
+    createForm: function (formId) {
         const insertedForm = document.createElement("form");
         containerElement.appendChild(insertedForm);
         
@@ -190,6 +227,22 @@ var ImgServerView = {
         insertedBox.setAttribute("placeholder", placeholder);
         insertedBox.value = textInput;
         insertedBox.type = "text";
+        if (readOnly === true) {
+            insertedBox.setAttribute("readonly", "readonly");
+        }
+    },
+    
+    insertImageBox: function (group, boxId, boxName, placeholder, imageInput, readOnly) {
+        const insertedBox = document.createElement("input");
+        group.appendChild(insertedBox);
+        
+        
+        insertedBox.id = boxId;
+        insertedBox.className = "form-control";
+        insertedBox.name = boxName;
+        insertedBox.setAttribute("placeholder", placeholder);
+        insertedBox.value = imageInput;
+        insertedBox.type = "file";
         if (readOnly === true) {
             insertedBox.setAttribute("readonly", "readonly");
         }
