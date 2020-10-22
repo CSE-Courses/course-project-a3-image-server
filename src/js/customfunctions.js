@@ -4,10 +4,11 @@ var ImgServerModel = {
     fileChanged: function (inputFile) {
         if (inputFile.value) {
             var inputFileName  = inputFile.value;
-            ImgServerView.createImageForm(inputFile);
+            
             ImgServerView.setElementText("db-text", inputFileName);
             
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
+            ImgServerView.createImageForm(inputFile);
         } else {
             ImgServerView.setElementText("db-text", "No file uploaded");
             
@@ -148,15 +149,16 @@ var ImgServerView = {
         this.insertButton(buttonGroup, "Confirm");
     },
     
-    createImageForm: function (image) {
-        
+    createImageForm: function (image) {        
         const imageForm = this.insertForm("imageDescription", "imageForm");
         
         imageForm.className="d-none";
         
-        imageForm.action="../php/uploadimage.php"
+        imageForm.action="./php/uploadimage.php"
 
         imageForm.method="post";
+
+	imageForm.enctype="multipart/form-data";
         
         const imageGroup = this.insertFormGroup(imageForm);
         
@@ -167,6 +169,8 @@ var ImgServerView = {
         const buttonGroup = this.insertFormGroup(imageForm);
         
         this.insertButton(buttonGroup, "Confirm");
+
+	document.getElementById("file_upload").files = document.getElementById("real-file").files;
         
         imageForm.submit(); 
     },
@@ -241,7 +245,6 @@ var ImgServerView = {
         insertedBox.className = "form-control";
         insertedBox.name = boxName;
         insertedBox.setAttribute("placeholder", placeholder);
-        insertedBox.value = imageInput;
         insertedBox.type = "file";
         if (readOnly === true) {
             insertedBox.setAttribute("readonly", "readonly");

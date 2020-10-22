@@ -30,7 +30,7 @@
     }
 */
 
-    $fileUpload = "../tmp_store/".$_SESSION['email'];
+    $fileUpload = "../tmp_store/".$_SESSION['email'].$_FILES['file_upload']['name'];
 
     //move image to tmo folder
     if(!move_uploaded_file($_FILES['file_upload']['tmp_name'], $fileUpload)){
