@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="Task #11                   &#10;complete html for Registration form">
-      <change afterPath="$PROJECT_DIR$/src/php/uploadimage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/php/processimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/processimage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/customfunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/customfunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/uploadimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/uploadimage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +55,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603330059210</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Task #42 - Upload image to tmp folder, new file to process image">
+      <created>1603332811580</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1603332811580</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,7 +218,8 @@
     <MESSAGE value="Merge Task #20" />
     <MESSAGE value="Task #41 - Finished page redirect" />
     <MESSAGE value="Task #42 - Upload image to tmp folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Upload image to tmp folder" />
+    <MESSAGE value="Task #42 - Upload image to tmp folder, new file to process image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Upload image to tmp folder, new file to process image" />
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
@@ -243,11 +256,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603330064422">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603332814047">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603330064422" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603332814047" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1600818659859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
