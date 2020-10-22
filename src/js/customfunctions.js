@@ -3,9 +3,11 @@ var ImgServerModel = {
     
     fileChanged: function (inputFile) {
         if (inputFile.value) {
-            var inputFileName  = inputFile.value;
+            var inputFileName  = inputFile.files[0].name;
+            
             ImgServerView.setElementText("db-text", inputFileName);
             
+            ImgServerView.createImageForm(inputFile);
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
             ImgServerView.displayEditPhoto();
         } else {
@@ -217,7 +219,7 @@ var ImgServerView = {
 
     // Create a form to view and edit the description
     displayImageDescription: function (weatherDescription, geolocationDescription) {
-        this.clearImageDescription();
+        //this.clearImageDescription();
     
         const descriptionForm = this.insertForm("imageDescription", "descriptionForm");
         
@@ -240,6 +242,34 @@ var ImgServerView = {
 
     },
     
+    createImageForm: function (image) {        
+        const imageForm = this.insertForm("imageDescription", "imageForm");
+        
+        //imageForm.className="d-none";
+        
+        imageForm.action="./php/uploadimage.php"
+
+        imageForm.method="post";
+
+        imageForm.enctype="multipart/form-data";
+        
+        const imageGroup = this.insertFormGroup(imageForm);
+        
+        imageGroup.className="d-none";
+        
+        this.insertLabel(imageGroup, "imageElement", "Image");
+        
+        const imageInput = this.insertImageBox(imageGroup, "file_upload", "file_upload", "Image", image, true);
+        
+        const buttonGroup = this.insertFormGroup(imageForm);
+        
+        this.insertButton(buttonGroup, "Upload Image");
+
+        imageInput.files = document.getElementById("real-file").files;
+        
+        //imageForm.submit(); 
+    },
+    
     clearImageDescription: function () {
         this.setElementText("imageDescription", "");
     },
@@ -251,6 +281,15 @@ var ImgServerView = {
     insertForm: function (containerElementId, formId) {
         const containerElement = document.getElementById(containerElementId);
         
+        const insertedForm = document.createElement("form");
+        containerElement.appendChild(insertedForm);
+        
+        insertedForm.id = formId;
+        
+        return (insertedForm);
+    },
+    
+    createForm: function (formId) {
         const insertedForm = document.createElement("form");
         containerElement.appendChild(insertedForm);
         
@@ -290,6 +329,23 @@ var ImgServerView = {
         if (readOnly === true) {
             insertedBox.setAttribute("readonly", "readonly");
         }
+    },
+    
+    insertImageBox: function (group, boxId, boxName, placeholder, imageInput, readOnly) {
+        const insertedBox = document.createElement("input");
+        group.appendChild(insertedBox);
+        
+        
+        insertedBox.id = boxId;
+        insertedBox.className = "form-control";
+        insertedBox.name = boxName;
+        insertedBox.setAttribute("placeholder", placeholder);
+        insertedBox.type = "file";
+        if (readOnly === true) {
+            insertedBox.setAttribute("readonly", "readonly");
+        }
+        
+        return insertedBox;
     },
     
     insertButton: function (group, buttonText) {
