@@ -4,10 +4,10 @@
  */
 
 // Open a the file in binary mode
-$image = fopen('../tmp_store/##NAME', 'rb');
+$image = fopen('../tmp_store/test.jpeg', 'rb');
 
 if (!$image) {
-    echo 'Error: Unable to open image for reading';
+    echo 'Unable to open image';
     exit;
 }
 
@@ -15,6 +15,12 @@ if (!$image) {
 $headers = exif_read_data($image);
 
 if (!$headers) {
-    echo 'Error: Unable to read exif headers';
+    echo 'Unable to read exif headers from file';
     exit;
+}
+
+// output exif headers
+foreach ($headers['COMPUTED'] as $header => $value) {
+    printf('%s => %s', $header, $value);
+    echo '<br>';
 }

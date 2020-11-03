@@ -73,7 +73,7 @@
       <workItem from="1601158599681" duration="9346000" />
       <workItem from="1601428480688" duration="2069000" />
       <workItem from="1601584131470" duration="14600000" />
-      <workItem from="1603760656114" duration="1122000" />
+      <workItem from="1603760656114" duration="2555000" />
     </task>
     <task id="LOCAL-00001" summary="Task #11&#10;complete html for registration">
       <created>1600869340295</created>
@@ -194,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603335705523</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder">
+      <created>1604359310120</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604359310120</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +234,8 @@
     <MESSAGE value="Task #42 - Upload image to tmp folder" />
     <MESSAGE value="Task #42 - Upload image to tmp folder, new file to process image" />
     <MESSAGE value="Task #42 - Comment out extension check in uploadimage.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Comment out extension check in uploadimage.php" />
+    <MESSAGE value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder" />
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
@@ -264,11 +272,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603335710850">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604359317763">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603335710850" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1604359317763" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1600818659859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
