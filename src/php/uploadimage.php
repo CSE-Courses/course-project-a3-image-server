@@ -1,7 +1,7 @@
 <?php
-/*
- * Purpose: Upload image to tmp_store directory on server
- */
+    /*
+    * Purpose: Upload image to tmp_store directory on server
+    */
     session_start();
 
     //extract post variables
@@ -18,7 +18,7 @@
         header('location: ../index.html');
         exit();
     }
-/*
+    /*
     //check for file type
     if($fileType != 'image/jpeg' && $fileType != 'image/JPG' && $fileType != 'image/png'){
         fwrite($debug, "HERE");
@@ -28,7 +28,7 @@
         header('location: ../index.html');
         exit();
     }
-*/
+    */
 
     $fileUpload = "../tmp_store/".$_SESSION['email'].$_FILES['file_upload']['name'];
 

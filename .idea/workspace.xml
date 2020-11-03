@@ -22,6 +22,8 @@
     <list default="true" id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="Task #11                   &#10;complete html for Registration form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/action_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/action_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/processimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/processimage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/uploadimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/uploadimage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +75,7 @@
       <workItem from="1601158599681" duration="9346000" />
       <workItem from="1601428480688" duration="2069000" />
       <workItem from="1601584131470" duration="14600000" />
+      <workItem from="1603760656114" duration="3742000" />
     </task>
     <task id="LOCAL-00001" summary="Task #11&#10;complete html for registration">
       <created>1600869340295</created>
@@ -172,7 +175,42 @@
       <option name="project" value="LOCAL" />
       <updated>1603307688635</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Task #42 - Upload image to tmp folder">
+      <created>1603330059210</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1603330059210</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Task #42 - Upload image to tmp folder, new file to process image">
+      <created>1603332811580</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1603332811580</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Task #42 - Comment out extension check in uploadimage.php">
+      <created>1603335705523</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1603335705523</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder">
+      <created>1604359310120</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1604359310120</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder --&gt; Example image included in tmp_store to show header extraction">
+      <created>1604368314401</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1604368314401</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +240,13 @@
     <MESSAGE value="Task #20 - Only issue is returning back to homepage" />
     <MESSAGE value="Merge Task #20" />
     <MESSAGE value="User Story #1 - Add session variables for specific user in action_login.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="User Story #1 - Add session variables for specific user in action_login.php" />
+    <MESSAGE value="Task #41 - Finished page redirect" />
+    <MESSAGE value="Task #42 - Upload image to tmp folder" />
+    <MESSAGE value="Task #42 - Upload image to tmp folder, new file to process image" />
+    <MESSAGE value="Task #42 - Comment out extension check in uploadimage.php" />
+    <MESSAGE value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder" />
+    <MESSAGE value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder --&gt; Example image included in tmp_store to show header extraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder --&gt; Example image included in tmp_store to show header extraction" /> 
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
@@ -239,11 +283,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1603307694932">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1604368318003">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1603307694932" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1604368318003" />
     <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1600818659859">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
