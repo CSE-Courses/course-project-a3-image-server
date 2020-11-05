@@ -76,15 +76,16 @@
       <div class="modal-body">
         <p>Clicking a button will apply a filter and download the the filtered image.</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary">Grayscale</button>
-         <button type="button" class="btn btn-secondary">Sharpen</button>
-          <button type="button" class="btn btn-secondary">Negative</button>
+      <form method = "post" action="./php/photoFilters.php" class="modal-footer">
+        <input type="submit" name="grayscale" class="btn btn-secondary" value="Grayscale"></input>
+         <input type="submit" name="sharpen" class="btn btn-secondary" value="Sharpen"></input>
+          <input type="submit" name="negative" class="btn btn-secondary" value="Negative"></input>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+      </form>
     </div>
   </div>
 </div>
+
         </main>
          
         <!-- The footer -->

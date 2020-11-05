@@ -12,7 +12,7 @@ $image->effects()->negative();
 $image->rotate(90);
 
 
-$image->save('negative.png');
+$image->save('download.png');
 }
 
 
@@ -23,7 +23,7 @@ $image = $imagine->open('../tmp_store/test.jpeg');
 
 $image->effects()->sharpen();
 $image->rotate(90);
-$image->save('sharpen.png');
+$image->save('download.png');
 }
 
 function grayscaleFilter(){
@@ -35,7 +35,17 @@ $image = $imagine->open('../tmp_store/test.jpeg');
 $image->effects()->grayscale();
 $image->rotate(90);
 
-$image->save('grayscale.png');
+$image->save('download.png');
+}
+
+if(isset($_POST['grayscale'])){
+grayscaleFilter();
+}
+if(isset($_POST['negative'])){
+negativeFilter();
+}
+if(isset($_POST['sharpen'])){
+sharpenFilter();
 }
 
 
