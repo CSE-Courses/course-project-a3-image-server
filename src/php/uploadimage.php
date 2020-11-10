@@ -10,6 +10,7 @@
     //change this based on file name
     $fileType = $_FILES['file_upload']['type'];
     $fileSize = $_FILES['file_upload']['size'];
+    $fileName = $_FILES['file_upload']['name'];
 
     if($fileSize/1024 > "4096"){
         //file size should be less than 4 MB
@@ -18,21 +19,22 @@
         header('location: ../index.html');
         exit();
     }
-    /*
+
     //check for file type
     if($fileType != 'image/jpeg' && $fileType != 'image/JPG' && $fileType != 'image/png'){
-        fwrite($debug, "HERE");
         //file type should be jpeg,jpg, or png
         $_SESSION['message'] = "Wrong file type";
         //header call
         header('location: ../index.html');
+        ?>
+        <script>alert("Submission Error");</script>
+        <?php
         exit();
     }
-    */
 
     $fileUpload = "../tmp_store/".$_SESSION['email'].$_FILES['file_upload']['name'];
 
-    //move image to tmo folder
+    //move image to tmp folder
     if(!move_uploaded_file($_FILES['file_upload']['tmp_name'], $fileUpload)){
         $_SESSION['message'] = "Could not move file to destination";
         //header here
