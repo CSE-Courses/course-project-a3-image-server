@@ -20,10 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="Task #11                   &#10;complete html for Registration form">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/action_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/action_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/php/processimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/processimage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/php/uploadimage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/uploadimage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +243,7 @@
     <MESSAGE value="Task #42 - Comment out extension check in uploadimage.php" />
     <MESSAGE value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder" />
     <MESSAGE value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder --&gt; Example image included in tmp_store to show header extraction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder --&gt; Example image included in tmp_store to show header extraction" /> 
+    <option name="LAST_COMMIT_MESSAGE" value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder --&gt; Example image included in tmp_store to show header extraction" />
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
