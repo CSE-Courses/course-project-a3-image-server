@@ -5,41 +5,47 @@
     */
 
     session_start();
+    //check if the user is logged in
+    if(isset($_SESSION['email'])) {
+        //connection variable from connect_db
+        global $conn;
+        // Open a the file in binary mode
+        //name of the file stored in uploadimage
+        $tmpname = $_SESSION['tmp_name'];
+        $image = fopen($tmpname, 'rb');
 
-    global $conn;
-    // Open a the file in binary mode
-    $image = fopen('../tmp_store/test.jpeg', 'rb');
+        //make sure the file was opened
+        if (!$image) {
+            echo 'Unable to open image';
+            exit;
+        }
 
-    if (!$image) {
-        echo 'Unable to open image';
-        exit;
-    }
+        // Attempt to read the exif headers
+        $headers = exif_read_data($image);
 
-    // Attempt to read the exif headers
-    $headers = exif_read_data($image);
+        //make sure exif data was read properly
+        if (!$headers) {
+            echo 'Unable to read exif headers from file';
+            exit;
+        }
 
-    if (!$headers) {
-        echo 'Unable to read exif headers from file';
-        exit;
-    }
+        //connect to db
+        include 'connect_db.php';
 
-    //connect to db
-    include 'connect_db.php';
-
-    /*
-     * 1) find all tables linked to email address
-     * 2) if nothing there, then create a general table and insert into that table
-     * 3) if there is a table, insert headers into it
-     */
-
-    //email session variable for user
-    $email = $_SESSION['email'];
-
-    //Now insert photo and headers into database with sql querys (talk to Mohit for formatting query) in for loop
-    foreach ($headers['COMPUTED'] as $header => $value) {
-        printf('%s => %s', $header, $value);
-        echo '<br>';
-        //put variables in here to store
-        //$qry ="INSERT INTO `imagestore`(`email`, `imagename`, `imgdatetime`, `lengthofimage`) VALUES ('$mail','$fileName',now(),'$fileSize')";
+        //insert query variables for db processing
+        $fileType = $_FILES['file_upload']['type'];
+        $fileSize = $_FILES['file_upload']['size'];
+        $fileName = $_FILES['file_upload']['name'];
+        $email = $_SESSION['email'];
+        $imgtime = now(); //store current time as default if image does not have it
+        if(isset($headers['FileDateTime'])){
+            $imgtime = $headers['FileDateTime'];
+        }
+        //construct and execute query to store image info in db
+        $qry ="INSERT INTO `imagestore`(`email`, `tmp_name`, `imagename`, `imgdatetime`, `lengthofimage`) VALUES ('$email','$tmpname','$fileName','$imgtime','$fileSize')";
         $insert_query = mysqli_query($conn, $qry);
+    } else {
+        $_SESSION['message'] = "Not Logged In";
+        //header here
+        header('location: ../index.html');
     }
