@@ -223,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605015390692</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Task #43 - Added column to imagestore table to hold name of image in tmp_store so that it may be retrieved later on (it is more efficient to hold large image files locally and keep metadata organization separate on sql server)">
+      <created>1605053257315</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1605053257315</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +268,8 @@
     <MESSAGE value="Task #42 - Use exif_read_data to extract metadata from uploaded image in tmp_store folder --&gt; Example image included in tmp_store to show header extraction" />
     <MESSAGE value="Task #43 - Initial commit to establish branch" />
     <MESSAGE value="Task #43 - Testing sql querys to create new tables and store data in them if current user doesnt have a table for their data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #43 - Testing sql querys to create new tables and store data in them if current user doesnt have a table for their data" />
+    <MESSAGE value="Task #43 - Added column to imagestore table to hold name of image in tmp_store so that it may be retrieved later on (it is more efficient to hold large image files locally and keep metadata organization separate on sql server)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #43 - Added column to imagestore table to hold name of image in tmp_store so that it may be retrieved later on (it is more efficient to hold large image files locally and keep metadata organization separate on sql server)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
@@ -298,11 +306,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1605015392330">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1605053259187">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1605015392329" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1605053259187" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605015417759">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -315,5 +323,16 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1602622170721" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/php/uploadimage.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

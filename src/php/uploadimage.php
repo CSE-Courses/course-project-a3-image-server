@@ -11,6 +11,10 @@
         $fileType = $_FILES['file_upload']['type'];
         $fileSize = $_FILES['file_upload']['size'];
         $fileName = $_FILES['file_upload']['name'];
+        //set session variables so these can be accessed in processimage
+        $_SESSION['file_upload_type'] = $fileType;
+        $_SESSION['file_upload_size'] = $fileSize;
+        $_SESSION['file_upload_name'] = $fileName;
 
         if($fileSize/1024 > "4096"){
             //file size should be less than 4 MB
@@ -32,7 +36,7 @@
             exit();
         }
 
-        $fileUpload = "../tmp_store/".$_SESSION['email'].$_FILES['file_upload']['name'];
+        $fileUpload = "../tmp_store/".$_SESSION['email'].$_FILES['file_upload']['name'].date("His");
         //Define session variable to store tmp_name
         $_SESSION['tmp_name'] = $fileUpload;
 
@@ -44,7 +48,7 @@
             exit();
         }
 
-        header('location: ../index.html');
+        header('location: ./processimage.php');
         exit();
 
     } else {

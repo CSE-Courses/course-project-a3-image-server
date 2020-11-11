@@ -33,17 +33,21 @@
         include 'connect_db.php';
 
         //insert query variables for db processing
-        $fileType = $_FILES['file_upload']['type'];
-        $fileSize = $_FILES['file_upload']['size'];
-        $fileName = $_FILES['file_upload']['name'];
+        $fileType = $_SESSION['file_upload_type'];
+        $fileSize = $_SESSION['file_upload_size'];
+        $fileName = $_SESSION['file_upload_name'];
         $email = $_SESSION['email'];
-        $imgtime = now(); //store current time as default if image does not have it
+        $imgtime = date("His"); //store current time as default if image does not have it
         if(isset($headers['FileDateTime'])){
             $imgtime = $headers['FileDateTime'];
         }
         //construct and execute query to store image info in db
         $qry ="INSERT INTO `imagestore`(`email`, `tmp_name`, `imagename`, `imgdatetime`, `lengthofimage`) VALUES ('$email','$tmpname','$fileName','$imgtime','$fileSize')";
         $insert_query = mysqli_query($conn, $qry);
+
+        $_SESSION['message'] = "Upload success";
+        //back to home page
+        header('location: ../index.html');
     } else {
         $_SESSION['message'] = "Not Logged In";
         //header here
