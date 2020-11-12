@@ -16,8 +16,11 @@
     <body class="d-flex flex-column h-100">
 
         <script src="./js/customfunctions.js"> </script>
+<<<<<<< HEAD
         <script src="./js/sessionVar.php"> </script>
 
+=======
+>>>>>>> photoFilters
         <div id="navbar"></div>
         
         <!-- The classes help format the sticky footer -->
@@ -62,6 +65,31 @@
                     <div id="imageDescription" class="col-8"></div>
                 </div>
             </div>
+
+
+            <!-- Modal-->
+    <div class="modal" id="editModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Choose between the filters below!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Clicking a button will apply a filter and download the the filtered image.</p>
+      </div>
+      <form method = "post" action="./php/photoFilters.php" class="modal-footer">
+        <input type="submit" name="grayscale" class="btn btn-secondary" value="Grayscale"></input>
+         <input type="submit" name="sharpen" class="btn btn-secondary" value="Sharpen"></input>
+          <input type="submit" name="negative" class="btn btn-secondary" value="Negative"></input>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </form>
+    </div>
+  </div>
+</div>
+
         </main>
          
         <!-- The footer -->
