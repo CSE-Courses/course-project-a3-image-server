@@ -175,6 +175,10 @@ var ImgServerView = {
         editPhotoBtn.id = "edit";
         editPhotoBtn.className = "btn btn-secondary";
         editPhotoBtn.onclick = function(){
+         $('#editModal').modal('show')
+
+        }
+       /* editPhotoBtn.onclick = function(){
             form = document.getElementById("editPhotofForm");
             form.remove();
             form = document.getElementById("descriptionForm");
@@ -213,7 +217,7 @@ var ImgServerView = {
             div4Buttons.appendChild(enDetail);
             div4Label.appendChild(div4Buttons);
 
-        };
+        };*/
         editPhotoBtnGroup.appendChild(editPhotoBtn);
     },
 

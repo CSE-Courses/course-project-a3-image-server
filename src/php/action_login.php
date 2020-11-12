@@ -23,7 +23,7 @@ if(isset($_POST['email'], $_POST['psw'])){
         exit();
     } else {
         if(password_verify($psw, $user_info['password'])){
-            //bring back to homepage
+            //bring to user page
             //set login status for this user to be true (1)
             //set up session variables
             $_SESSION['email'] = $email;
@@ -33,7 +33,8 @@ if(isset($_POST['email'], $_POST['psw'])){
             setcookie($cookie_name, $cookie_value, time() + (86400*30),'/');
             //update sql database to show user logged in
             mysqli_query($conn, "UPDATE `user_table` SET login_status = 1 WHERE email = '$email'");
-            header('location: ../index.html');
+            echo ("<h1>Login successful!</h1>");
+            header('refresh: 5; location: ../userPage.php');
             exit();
         } else {
             //incorrect password
