@@ -108,7 +108,7 @@ var ImgServerView = {
                         <\/div>\
                     <\/form>";
         if (ImgServerModel.username() !== "") {
-            navlogin = "<a class=\"text-reset\" href=\"profilePage.html\">User Page<\/a>";
+            navlogin = "<a class=\"text-reset\" href=\"php/retrieve_userdata.php\">User Page<\/a>";
         }
         document.getElementById("navbar").innerHTML  = "<!-- The navbar -->\
         <nav id=\"cseNavbar\" class=\"navbar rounded-pill-bottom\" style=\"background-color: #918D85; color:#fff\">\

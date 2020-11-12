@@ -33,8 +33,7 @@ if(isset($_POST['email'], $_POST['psw'])){
             setcookie($cookie_name, $cookie_value, time() + (86400*30),'/');
             //update sql database to show user logged in
             mysqli_query($conn, "UPDATE `user_table` SET login_status = 1 WHERE email = '$email'");
-            echo ("<h1>Login successful!</h1>");
-            header('location: ../profilePage.html');
+            header('location: ./retrieve_userdata.php');
             exit();
         } else {
             //incorrect password
