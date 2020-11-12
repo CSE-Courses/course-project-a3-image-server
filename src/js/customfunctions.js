@@ -26,7 +26,7 @@ var ImgServerModel = {
     },
     
     username: function() {
-        return this.getCookie("username");            
+        return sessionEmail;            
     },
     
     // From https://www.w3schools.com/js/js_cookies.asp
@@ -85,7 +85,32 @@ var ImgServerView = {
     },
     
     insertNavbar: function () {
-     document.getElementById("navbar").innerHTML  = "<!-- The navbar -->\
+     var navlogin = "<!-- Drop down form -->\
+                    <form class=\"form-row px-2\" action=\"./php/action_login.php\"method=\"post\">\
+                        <div class=\"col-9\">\
+                            <div class=\"form-group my-1 p-1\">\
+                                <label class=\"sr-only\" for=\"menuEmail\">Email<\/label>\
+                                <input type=\"text\" class=\"form-control\" id=\"menuEmail\" name=\"email\" placeholder=\"Email\" required>\
+                            <\/div>\
+                            <div class=\"form-group my-1 p-1\">\
+                                <label class=\"sr-only\" for=\"menuPassword\">Password<\/label>\
+                                <input type=\"password\" class=\"form-control\" id=\"menuPassword\" name=\"psw\" placeholder=\"Password\" required>\
+                            <\/div>\
+                        <\/div>\
+                        <div class=\"col-3 d-flex align-items-center\">\
+                            <button type=\"submit\" class=\"btn btn-dark\">\
+                            \
+                                <!-- Play icon -->\
+                                <svg width=\"2em\" height=\"2em\" viewBox=\"0 0 16 16\" class=\"bi bi-play-fill\" fill=\"currentColor\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\
+                                    <path d=\"M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z\"\/>\
+                                <\/svg>\
+                            <\/button>\
+                        <\/div>\
+                    <\/form>";
+        if (ImgServerModel.username() !== "") {
+            navlogin = "<a class=\"text-reset\" href=\"profilePage.html\">User Page<\/a>";
+        }
+        document.getElementById("navbar").innerHTML  = "<!-- The navbar -->\
         <nav id=\"cseNavbar\" class=\"navbar rounded-pill-bottom\" style=\"background-color: #918D85; color:#fff\">\
         \
             <div>\
@@ -114,29 +139,7 @@ var ImgServerView = {
             <div class=\"collapse\" id=\"collapseMenu\" style=\"position: absolute; z-index:1001;\">\
                 <div class=\"menu-card card-body p-0\">\
                 \
-                <!-- Drop down form -->\
-                    <form class=\"form-row px-2\" action=\"./php/action_login.php\"method=\"post\">\
-                        <div class=\"col-9\">\
-                            <div class=\"form-group my-1 p-1\">\
-                                <label class=\"sr-only\" for=\"menuEmail\">Email<\/label>\
-                                <input type=\"text\" class=\"form-control\" id=\"menuEmail\" name=\"email\" placeholder=\"Email\" required>\
-                            <\/div>\
-                            <div class=\"form-group my-1 p-1\">\
-                                <label class=\"sr-only\" for=\"menuPassword\">Password<\/label>\
-                                <input type=\"password\" class=\"form-control\" id=\"menuPassword\" name=\"psw\" placeholder=\"Password\" required>\
-                            <\/div>\
-                        <\/div>\
-                        <div class=\"col-3 d-flex align-items-center\">\
-                            <button type=\"submit\" class=\"btn btn-dark\">\
-                            \
-                                <!-- Play icon -->\
-                                <svg width=\"2em\" height=\"2em\" viewBox=\"0 0 16 16\" class=\"bi bi-play-fill\" fill=\"currentColor\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\">\
-                                    <path d=\"M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z\"\/>\
-                                <\/svg>\
-                            <\/button>\
-                        <\/div>\
-                    <\/form>\
-                    \
+                    " + navlogin + "\
                     <!-- Drop down links -->\
                     <div class=\"text-left px-3 pb-2\" style=\"font-size: 1rem;\">\
                         <a class=\"text-reset\" href=\"loginForm.html\">Log In<\/a>&nbsp;|&nbsp;<a class=\"text-reset\" href=\"registrationForm.html\">Create Account<\/a>\
