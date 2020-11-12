@@ -56,20 +56,3 @@
         //header here
         header('location: ../index.html');
     }
-
-
-    }
-
-
-     $_SESSION['message'] = "Uploaded Successfully";
-        //header here
-        header('location: ../index.html');
-    exit();
-
-}
-else
-{
-     $_SESSION['message'] = "Not Logged In";
-        //header here
-        header('location: ../index.html');
-}
