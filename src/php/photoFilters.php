@@ -12,7 +12,8 @@ $image->effects()->negative();
 $image->rotate(90);
 
 
-$image->save('download.png');
+$image->save('../tmp_store/download.png');
+header("Content-disposition: attachment; filename=\"../tmp_store/download.png\"");
 }
 
 
@@ -23,7 +24,8 @@ $image = $imagine->open('../tmp_store/test.jpeg');
 
 $image->effects()->sharpen();
 $image->rotate(90);
-$image->save('download.png');
+$image->save('../tmp_store/download.png');
+header("Content-disposition: attachment; filename=\"../tmp_store/download.png\"");
 }
 
 function grayscaleFilter(){
@@ -35,7 +37,8 @@ $image = $imagine->open('../tmp_store/test.jpeg');
 $image->effects()->grayscale();
 $image->rotate(90);
 
-$image->save('download.png');
+$image->save('../tmp_store/download.png');
+header("Content-disposition: attachment; filename=\"../tmp_store/download.png\"");
 }
 
 if(isset($_POST['grayscale'])){
