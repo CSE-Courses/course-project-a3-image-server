@@ -34,7 +34,7 @@
         //set session message showing successful retrieval and navigate to user page
         $_SESSION['message'] = "Data retrieval success.";
         //go to user page
-        header('location: ');
+        header('location: ../profilePage.html');
     } else {
         $_SESSION['message'] = "Not Logged In";
         header('location: ../index.html');
