@@ -1,7 +1,7 @@
 <?php
 
 // connect to database
-$conn = mysqli_connect('tethys.cse.buffalo.edu', 'seanjone', '50233994', 'cse442_542_2020_fall_teame_db');
+$conn = mysqli_connect('tethys.cse.buffalo.edu', 'studentname', 'studentnumber', 'cse442_542_2020_fall_teame_db');
 
 //check for connection
 if (!$conn) {
