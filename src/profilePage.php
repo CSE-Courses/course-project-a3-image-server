@@ -34,6 +34,36 @@
                                 if(!isset($_COOKIE[$cookie_name])) {
                                     header("Location: /loginForm.html");
                                 } 
+
+                                # Found code to play with at https://github.com/mikelothar/show-all-images-in-a-folder-with-php
+                                # NEEDS TESTING!!
+
+                                # Path to image folder
+                                $imageFolder = 'tmp_store/$_COOKIE[$cookie_name]';
+
+                                # Show only these file types from the image folder
+                                $imageTypes = '{*.jpg,*.JPG,*.jpeg,*.JPEG,*.png,*.PNG,*.gif,*.GIF}';
+                                
+                                # This is only used if images are sorted by date (see above)
+                                $newestImagesFirst = true;
+
+                                # Add images to array
+                                $images = glob($imageFolder . $imageTypes, GLOB_BRACE);
+
+                                # Sort images
+                                # Sort the images based on its 'last modified' time stamp
+                                $sortedImages = array();
+                                $count = count($images);
+                                for ($i = 0; $i < $count; $i++) {
+                                    $sortedImages[date('YmdHis', filemtime($images[$i])) . $i] = $images[$i];
+                                }
+                                # Sort images in array
+                                if ($newestImagesFirst) {
+                                    krsort($sortedImages);
+                                } else {
+                                    ksort($sortedImages);
+                                }
+                                
                             ?>
                             
                         <h1>Welcome, <?= $_COOKIE[$cookie_name] ?>!</h1>
@@ -44,9 +74,30 @@
                               <th padding="10px">Username/Email</th>
                             </tr>
                             <tr>
-                              <td padding="10px" style="text-align: center;"><?= $_COOKIE[$cookie_name ?></td>
+                              <td padding="10px" style="text-align: center;"><?= $_COOKIE[$cookie_name] ?></td>
                             </tr>
-                          </table>
+                        </table>
+
+                        <!--NEEDS TESTING-->
+                        <?= writeHtml('<ul class="ins-imgs">');
+                            foreach ($sortedImages as $image) {
+
+                                # Get the name of the image, stripped from image folder path and file type extension
+                                $name = 'Image name: ' . substr($image, strlen($imageFolder), strpos($image, '.') - strlen($imageFolder));
+
+                                # Get the 'last modified' time stamp, make it human readable
+                                $lastModified = '(last modified: ' . date('F d Y H:i:s', filemtime($image)) . ')';
+
+                                # Begin adding
+                                writeHtml('<li class="ins-imgs-li">');
+                                writeHtml('<div class="ins-imgs-img" onclick=this.classList.toggle("zoom");><a name="' . $image . '" href="#' . $image . '">');
+                                writeHtml('<img src="' . $image . '" alt="' . $name . '" title="' . $name . '">');
+                                writeHtml('</a></div>');
+                                writeHtml('<div class="ins-imgs-label">' . $name . ' ' . $lastModified . '</div>');
+                                writeHtml('</li>');
+                            }
+                            writeHtml('</ul>');
+                        ?>
                     </div>
                 </div>
             </div>
