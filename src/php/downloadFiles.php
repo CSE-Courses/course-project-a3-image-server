@@ -12,21 +12,21 @@ header("Content-Type: *insert file type here* ")
 function download($filePath){
 
 if(file_exists($filePath)){
-$fileName = basename($filePath)
-$fileSize = filesize($filePath)
-header("Cache-Control: private");
+$fileName = basename($filePath);
+$fileSize = filesize($filePath);
+header('Content-Description: File Transfer');
 header("Content-Type: image/jpeg");
-header('Pragma: private');
 header("Content-Disposition: attachment; filename=".$fileName);
+header('Expires: 0');
+header('Cache-Control: must-revalidate');
+header('Pragma: public');
 header("Content-Length: " . $fileSize);
-readfile($file);
-exit();
-
+readfile($filePath);
+exit;
 }else{
 echo '<script>alert("The file/files can not be downloaded")</script>'; 
 
 }
-
 }
 
 

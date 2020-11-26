@@ -39,7 +39,8 @@ $image->save('../tmp_store/grayDownload.png');
 }
 
 if(isset($_POST['grayscale'])){
-grayscaleFilter();
+	grayscaleFilter();
+}
 }
 if(isset($_POST['negative'])){
 negativeFilter();
