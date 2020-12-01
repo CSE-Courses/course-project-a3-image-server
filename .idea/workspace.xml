@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd062af3-6d79-4f7a-b092-a32bab6e610f" name="Default Changelist" comment="Task #11                   &#10;complete html for Registration form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/php/action_adddata.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/action_adddata.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605922128501</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Task #57 - Add code that checks for file selection and that the user is logged in before attempting to process action.">
+      <created>1605924449897</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1605924449897</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +283,8 @@
     <MESSAGE value="Task #43 - Testing sql querys to create new tables and store data in them if current user doesnt have a table for their data" />
     <MESSAGE value="Task #43 - Added column to imagestore table to hold name of image in tmp_store so that it may be retrieved later on (it is more efficient to hold large image files locally and keep metadata organization separate on sql server)" />
     <MESSAGE value="Task #57 - Add action file to add data to a users dataset in sql database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Task #57 - Add action file to add data to a users dataset in sql database." />
+    <MESSAGE value="Task #57 - Add code that checks for file selection and that the user is logged in before attempting to process action." />
+    <option name="LAST_COMMIT_MESSAGE" value="Task #57 - Add code that checks for file selection and that the user is logged in before attempting to process action." />
   </component>
   <component name="WindowStateProjectService">
     <state x="211" y="81" key="#CLI_Interpreters" timestamp="1600820485196">
@@ -312,11 +321,11 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1600820028515" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1605922130106">
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2" timestamp="1605924452092">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="190" key="Vcs.Push.Dialog.v2/-1116.0.1116.756/0.0.1440.900@0.0.1440.900" timestamp="1601334678548" />
-    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1605922130106" />
+    <state x="320" y="190" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1605924452092" />
     <state x="518" y="371" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605015417759">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
