@@ -1,89 +1,10 @@
 <?php
-require 'vendor/autoload.php';
+    /*
+    * Purpose: Upload image to tmp_store directory on server
+    */
+    require 'vendor/autoload.php';
 
-$imagine = new Imagine\Gd\Imagine();
-
-//open image and apply the effects and then save the image. 
-function negativeFilter($filePath){
-$imagine = new Imagine\Gd\Imagine();
-
-$image = $imagine->open($filePath);
-$image->effects()->negative();
-$image->rotate(90);
-$out = '../tmp_store/download.png';
-file_put_contents($out, $image);
-if(file_exists($out)){
-$fileName = basename($out);
-$fileSize = filesize($out);
-header('Content-Description: File Transfer');
-header("Content-Type: image/jpeg");
-header("Content-Disposition: attachment; filename=".$fileName);
-header('Expires: 0');
-header('Cache-Control: must-revalidate');
-header('Pragma: public');
-header("Content-Length: " . $fileSize);
-readfile($out);
-exit;
-}else{
-echo '<script>alert("The file/files can not be downloaded")</script>'; 
-
-}
-}
-
-function sharpenFilter($filePath){
-$imagine = new Imagine\Gd\Imagine();
-
-$image = $imagine->open($filePath);
-
-$image->effects()->sharpen();
-$image->rotate(90);
-$out = '../tmp_store/download.png';
-file_put_contents($out, $image);
-if(file_exists($out)){
-$fileName = basename($out);
-$fileSize = filesize($out);
-header('Content-Description: File Transfer');
-header("Content-Type: image/jpeg");
-header("Content-Disposition: attachment; filename=".$fileName);
-header('Expires: 0');
-header('Cache-Control: must-revalidate');
-header('Pragma: public');
-header("Content-Length: " . $fileSize);
-readfile($out);
-exit;
-}else{
-echo '<script>alert("The file/files can not be downloaded")</script>'; 
-
-}
-}
-function grayscaleFilter($filePath){
-$imagine = new Imagine\Gd\Imagine();
-
-
-$image = $imagine->open($filePath);
-
-$image->effects()->grayscale();
-$image->rotate(90);
-$out = '../tmp_store/download.png';
-file_put_contents($out, $image);
-if(file_exists($out)){
-$fileName = basename($out);
-$fileSize = filesize($out);
-header('Content-Description: File Transfer');
-header("Content-Type: image/jpeg");
-header("Content-Disposition: attachment; filename=".$fileName);
-header('Expires: 0');
-header('Cache-Control: must-revalidate');
-header('Pragma: public');
-header("Content-Length: " . $fileSize);
-readfile($out);
-exit;
-}else{
-echo '<script>alert("The file/files can not be downloaded")</script>'; 
-
-}
-}
-
+	$imagine = new Imagine\Gd\Imagine();
     session_start();
     if(isset($_SESSION['email'])){
         //extract post variables
@@ -124,7 +45,7 @@ echo '<script>alert("The file/files can not be downloaded")</script>';
             mkdir($userDir);
         }
 
-        $fileUpload = "../tmp_store/".$_SESSION['email']."/".$_FILES['file_upload']['name'].date("His");
+        $fileUpload = "../tmp_store/".$_SESSION['email']."/".$_FILES['file_upload']['name'];
         //Define session variable to store tmp_name
         $_SESSION['tmp_name'] = $fileUpload;
 
@@ -135,6 +56,97 @@ echo '<script>alert("The file/files can not be downloaded")</script>';
             header('location: ../index.html');
             exit();
         }
+
+if(isset($_POST['gray'])){
+     $imagine = new Imagine\Gd\Imagine();
+
+    $filePath = $_SESSION['tmp_name'];
+	$image = $imagine->open($filePath);
+
+	$image->effects()->grayscale();
+	$out = '../tmp_store/test.png';
+	file_put_contents($out, $image);
+	if(file_exists($out)){
+		$fileName = basename($out);
+		$fileSize = filesize($out);
+		header('Content-Description: File Transfer');
+		header("Content-Type: image/jpeg");
+		header("Content-Disposition: attachment; filename=".$fileName);
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate');
+		header('Pragma: public');
+		header("Content-Length: " . $fileSize);
+		readfile($out);
+exit;
+}else{
+echo '<script>alert("The file/files can not be downloaded")</script>'; 
+
+}
+
+}
+
+if(isset($_POST['neg'])){
+     $imagine = new Imagine\Gd\Imagine();
+
+    $filePath = $_SESSION['tmp_name'];
+	$image = $imagine->open($filePath);
+
+	$image->effects()->negative();
+	$out = '../tmp_store/test.png';
+	file_put_contents($out, $image);
+	if(file_exists($out)){
+		$fileName = basename($out);
+		$fileSize = filesize($out);
+		header('Content-Description: File Transfer');
+		header("Content-Type: image/jpeg");
+		header("Content-Disposition: attachment; filename=".$fileName);
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate');
+		header('Pragma: public');
+		header("Content-Length: " . $fileSize);
+		readfile($out);
+exit;
+}else{
+echo '<script>alert("The file/files can not be downloaded")</script>'; 
+
+}
+
+}
+
+
+
+if(isset($_POST['sharp'])){
+     $imagine = new Imagine\Gd\Imagine();
+
+    $filePath = $_SESSION['tmp_name'];
+	$image = $imagine->open($filePath);
+
+	$image->effects()->sharpen();
+	$out = '../tmp_store/test.png';
+	file_put_contents($out, $image);
+	if(file_exists($out)){
+		$fileName = basename($out);
+		$fileSize = filesize($out);
+		header('Content-Description: File Transfer');
+		header("Content-Type: image/jpeg");
+		header("Content-Disposition: attachment; filename=".$fileName);
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate');
+		header('Pragma: public');
+		header("Content-Length: " . $fileSize);
+		readfile($out);
+exit;
+}else{
+echo '<script>alert("The file/files can not be downloaded")</script>'; 
+
+}
+
+}
+
+
+
+
+
     } else {
         $_SESSION['message'] = "Not Logged In";
         //header here
@@ -142,15 +154,6 @@ echo '<script>alert("The file/files can not be downloaded")</script>';
     }
 
 
-if(isset($_POST['grayscale'])){
-grayscaleFilter($SESSION['tmp_name']);
-}
-if(isset($_POST['negative'])){
-negativeFilter($SESSION['tmp_name']);
-}
-if(isset($_POST['sharpen'])){
-sharpenFilter($SESSION['tmp_name']);
-}
 
 
-?>
+
