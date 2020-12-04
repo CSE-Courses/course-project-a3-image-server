@@ -9,7 +9,7 @@ var ImgServerModel = {
             
             ImgServerView.createImageForm(inputFile);
             ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
-            ImgServerView.displayEditPhoto();
+            ImgServerView.displayEditPhoto(inputFile);
         } else {
             ImgServerView.setElementText("db-text", "No file uploaded");
             
@@ -161,7 +161,7 @@ var ImgServerView = {
     },
     
 
-    displayEditPhoto : function(){
+  displayEditPhoto : function(image){
         const descriptionForm = this.insertForm("imageDescription","editPhotofForm")
 
         const editPhotoGroup = this.insertFormGroup(descriptionForm); 
@@ -177,53 +177,84 @@ var ImgServerView = {
         editPhotoBtn.value = "Click Here to Edit Your Photo!";
         editPhotoBtn.id = "edit";
         editPhotoBtn.className = "btn btn-secondary";
-        editPhotoBtn.onclick = function(){
-         $('#editModal').modal('show')
+        //editPhotoBtn.onclick = function(){
 
-        }
-       /* editPhotoBtn.onclick = function(){
+       // }
+        editPhotoBtn.onclick = function(){
             form = document.getElementById("editPhotofForm");
             form.remove();
             form = document.getElementById("descriptionForm");
             form.remove();
+             form = document.getElementById("imageForm");
+             form.remove();
+
+
+
             imageDescription = document.getElementById("imageDescription");
             filterButtonForm = document.createElement("form");
             filterButtonForm.id = "filterButtonForm";
+            filterButtonForm.action="./php/photoFilters.php";
+            filterButtonForm.method="post";
+            filterButtonForm.enctype="multipart/form-data";
             imageDescription.appendChild(filterButtonForm);
+
+            const imageGroup = document.createElement("div");
+            filterButtonForm.appendChild(imageGroup);
+            imageGroup.className="d-none";
+
+            const grpLabel = document.createElement("label");
+            imageGroup.appendChild(grpLabel);
+            grpLabel.setAttribute("for", "imageElement");
+            grpLabel.innerHTML = "Image";
+
+
+            const insertedBox = document.createElement("input");
+            imageGroup.appendChild(insertedBox);
+            insertedBox.id = "file_upload";
+         insertedBox.className = "form-control";
+            insertedBox.name = "file_upload";
+            insertedBox.setAttribute("placeholder", "Image");
+            insertedBox.type = "file";
+            insertedBox.setAttribute("readonly", "readonly");
+         insertedBox.files = document.getElementById("real-file").files;
+
+
             const div4Label = document.createElement("div");
             filterButtonForm.appendChild(div4Label);
             div4Label.className="form-group";
             const label = document.createElement("label");
             label.innerHTML = "Choose A Filter!";
             div4Label.appendChild(label);
+
             const div4Buttons = document.createElement("div");
             div4Buttons.className="form-group";
-            blur = document.createElement("input");
-            blur.type="button";
-            blur.value = "Blur Image";
-            blur.className = "btn btn-secondary";
-            div4Buttons.appendChild(blur);
+            grayScale = document.createElement("input");
+            grayScale.type="submit";
+            grayScale.value="Grayscale";
+            grayScale.name="gray";
+            grayScale.className = "btn btn-secondary";
+            div4Buttons.appendChild(grayScale);
+
             sharpen = document.createElement("input");
-            sharpen.type="button";
+            sharpen.type="submit";
             sharpen.value = "Sharpen Image";
+            sharpen.name="sharp";
             sharpen.className = "btn btn-secondary";
             div4Buttons.appendChild(sharpen);
-            emboss = document.createElement("input");
-            emboss.type="button";
-            emboss.value = "Apply Emboss Filter";
-            emboss.className = "btn btn-secondary";
-            div4Buttons.appendChild(emboss);
-            enDetail = document.createElement("input");
-            enDetail.type="button";
-            enDetail.value = "Enhance Detail";
-            enDetail.className = "btn btn-secondary";
-            div4Buttons.appendChild(enDetail);
+
+
+            neg = document.createElement("input");
+            neg.type="submit";
+            neg.value="Negative";
+            neg.name="neg";
+            neg.className = "btn btn-secondary";
+            div4Buttons.appendChild(neg);
+
             div4Label.appendChild(div4Buttons);
 
-        };*/
+        };
         editPhotoBtnGroup.appendChild(editPhotoBtn);
     },
-
     // Create a form to view and edit the description
     displayImageDescription: function (weatherDescription, geolocationDescription) {
         //this.clearImageDescription();
