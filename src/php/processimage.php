@@ -21,7 +21,7 @@
         }
 
         // Attempt to read the exif headers
-        $headers = exif_read_data($image);
+        $headers = exif_read_data($image,0,true);
 
         //make sure exif data was read properly
         if (!$headers) {
@@ -45,11 +45,11 @@
         $qry ="INSERT INTO `imagestore`(`email`, `tmp_name`, `imagename`, `imgdatetime`, `lengthofimage`) VALUES ('$email','$tmpname','$fileName','$imgtime','$fileSize')";
         $insert_query = mysqli_query($conn, $qry);
 
-        $_SESSION['message'] = "Upload success";
+        $_SESSION['success'] = "Image uploaded successfully";
         //back to home page
-        header('location: ../index.html');
+        header('location: ../view_images.php');
     } else {
-        $_SESSION['message'] = "Not Logged In";
+        $_SESSION['error'] = "Pleaee logged in first";
         //header here
-        header('location: ../index.html');
+        header('location: ../index.php');
     }

@@ -57,7 +57,3 @@
         header('location: ../index.html');
     }
 
-
-
-
-
