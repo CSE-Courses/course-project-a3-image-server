@@ -14,7 +14,7 @@
         <title>Profile Page - Image Server</title>
     </head>
     <body class="d-flex flex-column h-100">
-        
+
         <script src="./js/customfunctions.js"> </script>
         <script src="./js/sessionVar.php"> </script>
 
@@ -22,20 +22,20 @@
 
         <main role="main" class="flex-shrink-0">
             <div id="content" class="container">
-            
+
                 <!-- Most of the body is here. It's just a row with an 8/12 column -->
                 <div class="row justify-content-center w-100 my-5">
                     <div class="col-8">
                         <div class="card text-center w-100 border-0 rounded-0" style="background-color: #9A9A9A;"></div>
                         <!-- format welcome measage as "Welcome, {USERNAME}! -->
 
-                        
+
                             <?php
                                 if(!isset($_COOKIE[$cookie_name])) {
                                     header("Location: /loginForm.html");
-                                } 
+                                }
                             ?>
-                            
+
                         <h1>Welcome, <?= $_COOKIE[$cookie_name] ?>!</h1>
                         <br>
 
@@ -52,17 +52,24 @@
             </div>
         </main>
 
-        <footer id="footer" class="footer mt-auto py-3"></footer> 
+        <footer id="footer" class="footer mt-auto py-3"></footer>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        
+
         <script>
-            ImgServerView.insertNavbar();
-            ImgServerView.insertFooter();
+            var status = '<?php echo isset($_SESSION['email'] ) ? 'authenticated':'not_authenticated' ?>';
+
+
+            ImgServerView.insertNavbar(status);
+            if(status === 'not_authenticated'){
+                document.getElementById("sessionName").innerHTML='<p>Status : Disconnected</p>'
+            }
+            ImgServerView.insertFooter(status);
+
             ImgServerController.setupMenuEvents();
         </script>
     </body>

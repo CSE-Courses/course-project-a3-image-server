@@ -36,13 +36,7 @@
             exit();
         }
 
-        //check if user directory exists and make one if not
-        $userDir = "../tmp_store/".$_SESSION['email'];
-        if(!is_dir($userDir)){
-            mkdir($userDir);
-        }
-
-        $fileUpload = "../tmp_store/".$_SESSION['email']."/".$_FILES['file_upload']['name'].date("His");
+        $fileUpload = "../tmp_store/".$_SESSION['email'].$_FILES['file_upload']['name'].date("His");
         //Define session variable to store tmp_name
         $_SESSION['tmp_name'] = $fileUpload;
 
@@ -62,8 +56,4 @@
         //header here
         header('location: ../index.html');
     }
-
-
-
-
 
