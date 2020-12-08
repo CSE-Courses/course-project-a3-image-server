@@ -37,7 +37,7 @@ $id =  $_REQUEST['id'];
                             Add Image Information
                         </p>
 
-                        <form method="POST" action="do_upload_imagedata.php">
+                        <form method="POST" action="./php/do_upload_imagedata.php">
                             <input type="hidden" value="<?=$id?>" name="id">
                             <div class="form-group">
                                 <input type="text" name="location" placeholder="Location eg. New York" class="form-control"/>
