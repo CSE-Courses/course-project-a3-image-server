@@ -62,4 +62,3 @@
         //header here
         header('location: ../index.html');
     }
-
