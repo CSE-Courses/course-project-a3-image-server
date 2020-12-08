@@ -9,22 +9,19 @@ $id =  $_REQUEST['id'];
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- local bootstrap css-->
-    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
 
     <!-- custom stylesheet -->
-    <link rel="stylesheet" href="../styles/customstyle.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./styles/customstyle.css">
     <title>Home - Image Server</title>
 </head>
 
 <!-- The classes help format the sticky footer -->
 <body class="d-flex flex-column h-100">
 
-<script src="../js/customfunctions.js"> </script>
+<script src="./js/customfunctions.js"> </script>
 
-<script src="../js/sessionVar.php"> </script>
-
-<div id="navbar"></div>
+<?php include './php/header.php' ?>
 
 <!-- The classes help format the sticky footer -->
 <main role="main" class="flex-shrink-0">
@@ -72,8 +69,7 @@ $id =  $_REQUEST['id'];
 
 </main>
 
-<!-- The footer -->
-<footer id="footer" class="footer mt-auto py-3"></footer>
+<?php include './php/footer.php' ?>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -82,8 +78,8 @@ $id =  $_REQUEST['id'];
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 <script>
-    ImgServerView.insertNavbar();
-    ImgServerView.insertFooter();
+    //ImgServerView.insertNavbar();
+    //ImgServerView.insertFooter();
     ImgServerController.setupMenuEvents();
 </script>
 

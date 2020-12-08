@@ -13,9 +13,9 @@
   <!-- The classes help format the sticky footer -->
   <body class="d-flex flex-column h-100">
     <script src="./js/customfunctions.js"> </script>
-    <script src="./js/sessionVar.php"> </script>
 
-    <div id="navbar"></div>
+    <?php include './php/header.php' ?>
+    
     <br><br>
     <main role="main" class="flex-shrink-0">
     <div id="content" class="container pb-0" style="background-color:#9A9A9A; padding-right:0; padding-left:0;">
@@ -40,9 +40,9 @@
     </div>
 
     <!-- Forgotten info option -->
-    <div class="loginContainer container forgottenInfo d-inline-flex align-items-center" style="background-color: #706f6f;">
+    <!--<div class="loginContainer container forgottenInfo d-inline-flex align-items-center" style="background-color: #706f6f;">
         <p class="text-center w-100 my-0">Forgot your password or email? <a href="#" style="color: #fff;">Retrieve info here</a>.</p>
-    </div>
+    </div> -->
 </form>
 
       </div>
@@ -50,8 +50,7 @@
 
       <br>
 
-      <!-- The footer -->
-      <footer id="footer" class="footer mt-auto py-3"></footer> 
+      <?php include './php/footer.php' ?>
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -60,8 +59,8 @@
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
       
       <script>
-          ImgServerView.insertNavbar();
-          ImgServerView.insertFooter();
+          //ImgServerView.insertNavbar();
+          //ImgServerView.insertFooter();
           ImgServerController.setupMenuEvents();
       </script>
 

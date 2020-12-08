@@ -12,7 +12,6 @@ session_start();
 
         <!-- custom stylesheet -->
         <link rel="stylesheet" href="./styles/customstyle.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
 
         <title>Home - Image Server</title>
     </head>
@@ -22,9 +21,7 @@ session_start();
 
         <script src="./js/customfunctions.js"> </script>
 
-        <script src="./js/sessionVar.php"> </script>
-
-        <div id="navbar"></div>
+        <?php include './php/header.php' ?>
 
         <!-- The classes help format the sticky footer -->
         <main role="main" class="flex-shrink-0">
@@ -86,10 +83,10 @@ session_start();
 
                                         </td>
                                             <td>
-                                                <a href="./php/add_image_data.php?id=<?=$row['id']?>" style="color: black;">Add Meta</a>
+                                                <a href="./add_image_data.php?id=<?=$row['id']?>" style="color: black;">Add Meta</a>
                                             </td>
                                             <td>
-                                                <a href="./php/view_weather.php?id=<?=$row['id']?>">View Weather</a>
+                                                <a href="./view_weather.php?id=<?=$row['id']?>">View Weather</a>
                                             </td>
                                         </tr>
                                         <?php
@@ -111,8 +108,7 @@ session_start();
 
         </main>
 
-        <!-- The footer -->
-        <footer id="footer" class="footer mt-auto py-3"></footer>
+        <?php include './php/footer.php' ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -124,11 +120,11 @@ session_start();
             var status = '<?php echo isset($_SESSION['email'] ) ? 'authenticated':'not_authenticated' ?>';
 
 
-            ImgServerView.insertNavbar(status);
-            if(status === 'not_authenticated'){
-                document.getElementById("sessionName").innerHTML='<p>Status : Disconnected</p>'
-            }
-            ImgServerView.insertFooter(status);
+            //ImgServerView.insertNavbar(status);
+            //if(status === 'not_authenticated'){
+            //    document.getElementById("sessionName").innerHTML='<p>Status : Disconnected</p>'
+            //}
+            //ImgServerView.insertFooter(status);
 
             ImgServerController.setupMenuEvents();
         </script>

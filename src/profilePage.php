@@ -16,9 +16,8 @@
     <body class="d-flex flex-column h-100">
 
         <script src="./js/customfunctions.js"> </script>
-        <script src="./js/sessionVar.php"> </script>
 
-        <div id="navbar"></div>
+        <?php include './php/header.php' ?>
 
         <main role="main" class="flex-shrink-0">
             <div id="content" class="container">
@@ -32,7 +31,7 @@
 
                             <?php
                                 if(!isset($_COOKIE[$cookie_name])) {
-                                    header("Location: /loginForm.html");
+                                    header("Location: /loginForm.php");
                                 }
                             ?>
 
@@ -52,7 +51,7 @@
             </div>
         </main>
 
-        <footer id="footer" class="footer mt-auto py-3"></footer>
+        <?php include './php/footer.php' ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -64,11 +63,11 @@
             var status = '<?php echo isset($_SESSION['email'] ) ? 'authenticated':'not_authenticated' ?>';
 
 
-            ImgServerView.insertNavbar(status);
-            if(status === 'not_authenticated'){
-                document.getElementById("sessionName").innerHTML='<p>Status : Disconnected</p>'
-            }
-            ImgServerView.insertFooter(status);
+            //ImgServerView.insertNavbar(status);
+            //if(status === 'not_authenticated'){
+            //    document.getElementById("sessionName").innerHTML='<p>Status : Disconnected</p>'
+            //}
+            //ImgServerView.insertFooter(status);
 
             ImgServerController.setupMenuEvents();
         </script>

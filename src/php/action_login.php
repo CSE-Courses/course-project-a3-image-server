@@ -19,7 +19,7 @@ if(isset($_POST['email'], $_POST['psw'])){
 
     if($rows == 0){
         $_SESSION['message'] = "Email or password incorrect.";
-        header('location: ../loginForm.html');
+        header('location: ../loginForm.php');
         exit();
     } else {
         if(password_verify($psw, $user_info['password'])){
@@ -39,7 +39,7 @@ if(isset($_POST['email'], $_POST['psw'])){
         } else {
             //incorrect password
             $_SESSION['message'] = "Password incorrect.";
-            header('location: ../loginForm.html');
+            header('location: ../loginForm.php');
             exit();
         }
     }
