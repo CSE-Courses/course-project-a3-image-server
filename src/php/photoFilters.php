@@ -23,7 +23,7 @@
             //file size should be less than 4 MB
             $_SESSION['message'] = "File size is too big. Please limit to 4MB.";
             //header call back to home
-            header('location: ../index.html');
+            header('location: ../index.php');
             exit();
         }
 
@@ -32,7 +32,7 @@
             //file type should be jpeg,jpg, or png
             $_SESSION['message'] = "Wrong file type";
             //header call
-            header('location: ../index.html');
+            header('location: ../index.php');
             ?>
             <script>alert("Submission Error");</script>
             <?php
@@ -53,7 +53,7 @@
         if(!move_uploaded_file($_FILES['file_upload']['tmp_name'], $fileUpload)){
             $_SESSION['message'] = "Could not move file to destination";
             //header here
-            header('location: ../index.html');
+            header('location: ../index.php');
             exit();
         }
 
@@ -153,7 +153,7 @@ echo '<script>alert("The file/files can not be downloaded")</script>';
     } else {
         $_SESSION['message'] = "Not Logged In";
         //header here
-        header('location: ../index.html');
+        header('location: ../index.php');
     }
 
 

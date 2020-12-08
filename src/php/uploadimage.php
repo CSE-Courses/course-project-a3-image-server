@@ -63,7 +63,3 @@
         header('location: ../index.html');
     }
 
-
-
-
-

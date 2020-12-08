@@ -14,7 +14,7 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
     //make sure passwords match
     if($psw != $psw_repeat){
         $_SESSION['message'] = "Passwords do not match.";
-        header('Location: ../registrationForm.html');
+        header('Location: ../registrationForm.php');
         exit();
     }
 
@@ -26,7 +26,7 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
     $rows = mysqli_num_rows($query);
     if($rows != 0){
         $_SESSION['message'] = "Email already in use. Please use a different email.";
-        header('Location: ../registrationForm.html');
+        header('Location: ../registrationForm.php');
         exit();
     }
 
@@ -35,11 +35,11 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
     $insert_query = mysqli_query($conn, "INSERT INTO `user_table` (email, password, login_status) VALUES ('$email','$hash_psw',0)");
 
     //back to loginpage
-    header('Location: ../loginForm.html');
+    header('Location: ../loginForm.php');
     exit();
 } else {
     $_SESSION['message'] = "Error processing submitted form.";
-    header('Location: ../registrationForm.html');
+    header('Location: ../registrationForm.php');
     exit();
 }
 
