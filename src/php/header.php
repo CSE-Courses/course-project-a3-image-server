@@ -34,7 +34,11 @@
         <div class="collapse" id="collapseMenu" style="position: absolute; z-index:1001;">
             <div class="menu-card card-body p-0">
             
-            <!-- Drop down form -->
+
+                
+                <?php if (!isset($_SESSION['email'])) { ?>
+
+                            <!-- Drop down form -->
                 <form class="form-row px-2" action="./php/action_login.php"method="post">
                     <div class="col-9">
                         <div class="form-group my-1 p-1">
@@ -56,8 +60,6 @@
                         </button>
                     </div>
                 </form>
-                
-                <?php if (!isset($_SESSION['email'])) { ?>
                 <!-- Not authenticated -->
                 <div class="text-left px-3 pb-2" style="font-size: 1rem;">
                     <a class="text-reset" href="loginForm.php">Log In</a>&nbsp;|&nbsp;<a class="text-reset" href="registrationForm.php">Create Account</a>
