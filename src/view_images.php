@@ -99,6 +99,9 @@ session_start();
                             </div>
                         </div>
                     </div>
+                    <form action="./php/downloadCsv" method="post"> 
+                        <input type ="submit" name="export" value="Download MetaData"> 
+                     </form>
                 </div>
                 <div class="row justify-content-center w-100 my-5">
                     <div id="imageDescription" class="col-8"></div>
