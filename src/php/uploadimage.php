@@ -25,7 +25,7 @@
         }
 
         //check for file type
-        if($fileType != 'image/jpeg' && $fileType != 'image/JPG' && $fileType != 'image/png'){
+        if($fileType != 'image/jpeg' && $fileType != 'image/JPG' && $fileType != 'image/tiff'){
             //file type should be jpeg,jpg, or png
             $_SESSION['message'] = "Wrong file type";
             //header call
