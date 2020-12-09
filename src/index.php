@@ -55,7 +55,7 @@
                                             creator: dcode
                                             uploaded: 05/05/2020
                                             length: 38:07 -->
-                                        <span class="dropbox__txt" id="db-text">Drop file here or click to upload</span>
+                                        <span class="dropbox__txt" id="db-text">Drop file here or click to upload a .jpeg or .tiff file</span>
                                         <input type="file" name="daFile" class="dropbox__input" id="real-file">
                                         <script>
                                             ImgServerController.dragdrop();
