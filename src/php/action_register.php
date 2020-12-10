@@ -32,7 +32,16 @@ if(isset($_POST['email'], $_POST['psw'], $_POST['psw-repeat'])){
 
     //if not in database, insert new user into db
     $hash_psw = password_hash($psw, PASSWORD_BCRYPT, ['cost' => 12]);
-    $insert_query = mysqli_query($conn, "INSERT INTO `user_table` (email, password, login_status) VALUES ('$email','$hash_psw',0)");
+    
+    $stmt = $conn->prepare("INSERT INTO `user_table` (email, password, login_status) VALUES (?, ?, ?)");
+    $stmt->bind_param("ssi", $s_email, $s_hash, $s_login);
+
+    $s_email = $email;
+    $s_hash = $hash_psw;
+    $s_login = 0;
+
+    $stmt->execute();
+    $stmt->close();
 
     //back to loginpage
     header('Location: ../loginForm.html');
