@@ -42,8 +42,17 @@
             $imgtime = $headers['FileDateTime'];
         }
         //construct and execute query to store image info in db
-        $qry ="INSERT INTO `imagestore`(`email`, `tmp_name`, `imagename`, `imgdatetime`, `lengthofimage`) VALUES ('$email','$tmpname','$fileName','$imgtime','$fileSize')";
-        $insert_query = mysqli_query($conn, $qry);
+        $stmt = $conn->prepare("INSERT INTO `imagestore`(`email`, `tmp_name`, `imagename`, `imgdatetime`, `lengthofimage`) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssi", $s_email, $s_tmpname, $s_filename, $s_time, $s_filesize);
+        
+        $s_email = $email;
+        $s_tmpname = $tmpname;
+        $s_filename = $fileName;
+        $s_time = $imgtime;
+        $s_filesize = $fileSize;
+        
+        $stmt->execute();
+        $stmt->close();
 
         $_SESSION['message'] = "Upload success";
         //back to home page
