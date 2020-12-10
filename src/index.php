@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!doctype html>
 <html class="h-100" lang="en">
     <head>
@@ -11,40 +12,60 @@
 
         <title>Home - Image Server</title>
     </head>
-    
+
     <!-- The classes help format the sticky footer -->
     <body class="d-flex flex-column h-100">
 
         <script src="./js/customfunctions.js"> </script>
-
-        <script src="./js/sessionVar.php"> </script>
-
-        <div id="navbar"></div>
         
+        <?php include './php/header.php' ?>
+
         <!-- The classes help format the sticky footer -->
         <main role="main" class="flex-shrink-0">
             <div id="content" class="container">
-            
+                <?php
+                if(isset($_SESSION['logout'])){
+                    ?>
+                    <hr/>
+                    <div class="alert alert-danger"><?=$_SESSION['logout'];?></div>
+                <?php
+                    unset($_SESSION['logout']);
+                }
+                if(isset($_SESSION['login'])){
+                    ?>
+                    <hr/>
+                    <div class="alert alert-success"><?=$_SESSION['login'];?></div>
+                    <?php
+                    unset($_SESSION['login']);
+                }
+
+                ?>
                 <!-- Most of the body is here. It's just a row with an 8/12 column -->
                 <div class="row justify-content-center w-100 my-5">
                     <div class="col-8">
                         <!-- Need to make this section taller -->
                         <div class="card text-center w-100 border-0 rounded-0" style="background-color: #9A9A9A;">
                             <div class="card-body">
-                                <p class="card-text">
-                                    <div class="dropbox">
+
+                                <?= isset($_SESSION['email']) ? '
+ <p class="card-text">
+                                 <div class="dropbox">
                                         <!-- forgot to add where i got the drop and drag code from to edit to fit out needs
                                             https://www.youtube.com/watch?v=Wtrin7C4b7w
                                             creator: dcode
                                             uploaded: 05/05/2020
                                             length: 38:07 -->
-                                        <span class="dropbox__txt" id="db-text">Drop file here or click to upload</span>
+                                        <span class="dropbox__txt" id="db-text">Drop file here or click to upload a .jpeg or .tiff file</span>
                                         <input type="file" name="daFile" class="dropbox__input" id="real-file">
                                         <script>
                                             ImgServerController.dragdrop();
                                         </script>
-                                    </div>
-                                </p>
+                                        </p>
+                                    </div>':'<div class="alert alert-warning"> Please Login in first to upload images </div>';
+
+                                ?>
+
+
  <!--                               <p class="card-text">-OR-</p>
                                     <p>
                                     <input type="file" id="real-file" hidden="hidden"/>
@@ -66,44 +87,33 @@
 
 
             <!-- Modal-->
-    <div class="modal" id="editModal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Choose between the filters below!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Clicking a button will apply a filter and download the the filtered image.</p>
-      </div>
-      <form method = "post" action="./php/photoFilters.php" class="modal-footer">
-        <input type="submit" name="grayscale" class="btn btn-secondary" value="Grayscale"></input>
-         <input type="submit" name="sharpen" class="btn btn-secondary" value="Sharpen"></input>
-          <input type="submit" name="negative" class="btn btn-secondary" value="Negative"></input>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </form>
-    </div>
-  </div>
+
+<div style="text-align:center;">
+    <iframe width="600" height="315" src="https://www.youtube.com/embed/fNEP9l8CAlA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
         </main>
-         
-        <!-- The footer -->
-        <footer id="footer" class="footer mt-auto py-3"></footer> 
+
+        <?php include './php/footer.php' ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        
+
         <script>
-            ImgServerView.insertNavbar();
-            ImgServerView.insertFooter();
+
+            var status = '<?php echo isset($_SESSION['email'] ) ? 'authenticated':'not_authenticated' ?>';
+
+
+
+            //ImgServerView.insertNavbar(status);
+            //if(status === 'not_authenticated'){
+            //    document.getElementById("sessionName").innerHTML='<p>Status : Disconnected</p>'
+            //}
+            //ImgServerView.insertFooter(status);
             ImgServerController.setupMenuEvents();
         </script>
     </body>
 </html>
-
