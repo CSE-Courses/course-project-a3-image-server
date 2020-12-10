@@ -8,7 +8,7 @@ var ImgServerModel = {
             ImgServerView.setElementText("db-text", inputFileName);
 
             ImgServerView.createImageForm(inputFile);
-            ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
+            //ImgServerView.displayImageDescription("Cloudy (test)", "New York (test)");
             ImgServerView.displayEditPhoto(inputFile);
         } else {
             ImgServerView.setElementText("db-text", "No file uploaded");
@@ -51,8 +51,8 @@ var ImgServerView = {
         editPhotoBtn.onclick = function(){
             form = document.getElementById("editPhotofForm");
             form.remove();
-            form = document.getElementById("descriptionForm");
-            form.remove();
+            //form = document.getElementById("descriptionForm");
+            //form.remove();
              form = document.getElementById("imageForm");
              form.remove();
 

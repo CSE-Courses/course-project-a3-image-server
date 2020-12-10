@@ -79,8 +79,9 @@ session_start();
                                         <td><?= $row['imagename'] ?></td>
                                         <td><?= $row['lengthofimage'] ?></td>
                                         <td>
-                                           <img style="width: 250px;" src="./tmp_store/<?=array_reverse(explode('/',$row['tmp_name']))[0];?>"/>
 
+
+                        <img style="width: 250px;" src="./tmp_store/<?=$user_email."/".array_reverse(explode('/',$row['tmp_name']))[0];?>"/>
                                         </td>
                                             <td>
                                                 <a href="./add_image_data.php?id=<?=$row['id']?>" style="color: black;">Add Meta</a>
